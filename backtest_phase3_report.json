@@ -1,0 +1,30 @@
+{
+  "phase": "Phase 2 - Enhanced Entries",
+  "timestamp": "2026-07-21T17:16:07.116111",
+  "metrics": {
+    "total_trades": 107,
+    "winning_trades": 35,
+    "losing_trades": 72,
+    "win_rate": 32.71,
+    "profit_factor": 0.92,
+    "total_profit": -1071.67,
+    "avg_win": 336.3,
+    "avg_loss": -178.36,
+    "max_drawdown": 25.96,
+    "roi_percent": -10.72,
+    "final_capital": 8928.33,
+    "starting_capital": 10000
+  },
+  "signals": {
+    "bullish": 347,
+    "bearish": 167,
+    "no_signal": 5388
+  },
+  "trades_placed": 107,
+  "trades_filtered": 293,
+  "improvement": {
+    "previous_win_rate": "37.25%",
+    "new_win_rate": "32.71%",
+    "improvement": "-4.54%"
+  }
+}

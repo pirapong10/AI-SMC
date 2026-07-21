@@ -88,11 +88,11 @@ def resample_to_m15(h1_candles):
     return m15_candles
 
 
-def run_backtest_phase2():
-    """Run Phase 2 backtest with enhanced entries"""
+def run_backtest_phase3():
+    """Run Phase 3 backtest with optimized signal filtering"""
     
     logger.info("=" * 60)
-    logger.info("🎯 PHASE 2 BACKTEST: ENHANCED ENTRIES")
+    logger.info("🎯 PHASE 3 BACKTEST: OPTIMIZED SIGNAL FILTERING")
     logger.info("=" * 60)
     logger.info("")
     
@@ -151,6 +151,8 @@ def run_backtest_phase2():
     trades_placed = 0
     filtered_trades = 0
     rejected_trades = 0
+    last_trade_candle = 0   # Track cooldown
+    COOLDOWN_BARS = 5       # Min candles between trades
     
     for i in range(len(candles)):
         if i < 20:  # Need at least 20 candles for analysis
@@ -170,7 +172,7 @@ def run_backtest_phase2():
         backtest.check_exit_conditions(candle_dict["timestamp"], candle_dict)
         
         # Get recent candles
-        recent_candles_obj = candles[max(0, i-19):i+1]
+        recent_candles_obj = candles[max(0, i-24):i+1]  # 25 candles: CHoCH needs 15+
         recent_candles = [
             {
                 "timestamp": c["timestamp"],
@@ -187,10 +189,11 @@ def run_backtest_phase2():
         h4_idx = i // 4
         m15_idx = i
         
-        h4_context = h4_candles[max(0, h4_idx-5):h4_idx+1]
+        h4_context = h4_candles[max(0, h4_idx-20):h4_idx+1]  # 20 H4 candles for trend bias
         m15_context = m15_candles[max(0, m15_idx-19):m15_idx+1]
         
         # Multi-TF Analysis
+        confluence_analysis = None
         if len(h4_context) >= 10 and len(m15_context) >= 10:
             confluence_analysis = multi_tf.analyze_confluence(
                 h4_context, recent_candles, m15_context
@@ -209,6 +212,17 @@ def run_backtest_phase2():
             signals_stats["bearish"] += 1
         else:
             signals_stats["no_signal"] += 1
+        
+        # Enforce cooldown between trades
+        if i - last_trade_candle < COOLDOWN_BARS:
+            continue
+        
+        # Block trade if H4 actively contradicts the signal (neutral H4 is OK)
+        if confluence_analysis is not None and signal.value != 0:
+            h4_sig = confluence_analysis.get("h4_signal", SMCSignal.NO_SIGNAL)
+            if h4_sig != SMCSignal.NO_SIGNAL and h4_sig.value != signal.value:
+                rejected_trades += 1
+                continue
         
         # Validate entry with all filters
         if not backtest.open_position and signal != SMCSignal.NO_SIGNAL:
@@ -238,6 +252,7 @@ def run_backtest_phase2():
                         take_profit=take_profit
                     )
                     trades_placed += 1
+                    last_trade_candle = i  # Reset cooldown counter
             else:
                 # Log rejection reason
                 rejected_trades += 1
@@ -252,12 +267,18 @@ def run_backtest_phase2():
     
     # ==================== STEP 4: Generate Report ====================
     logger.info("\n📈 STEP 4: Calculating metrics...")
-    
     metrics = backtest.get_metrics()
     
-    logger.info("\n" + "=" * 60)
-    logger.info("📊 PHASE 2 BACKTEST RESULTS")
+    logger.info("")
     logger.info("=" * 60)
+    logger.info("📊 PHASE 3 BACKTEST RESULTS")
+    logger.info("=" * 60)
+    
+    if "status" in metrics:
+        logger.info(f"⚠️  {metrics['status']} — filters may be too strict.")
+        logger.info("=" * 60)
+        return
+    
     logger.info(f"Total Trades:        {metrics['total_trades']}")
     logger.info(f"Winning Trades:      {metrics['winning_trades']}")
     logger.info(f"Losing Trades:       {metrics['losing_trades']}")
@@ -295,15 +316,15 @@ def run_backtest_phase2():
         }
     }
     
-    with open("backtest_phase2_report.json", "w") as f:
+    with open("backtest_phase3_report.json", "w") as f:
         json.dump(report, f, indent=2)
     
-    logger.info("   💾 Report saved: backtest_phase2_report.json")
+    logger.info("   💾 Report saved: backtest_phase3_report.json")
     logger.info("")
     
     # Save trades
-    with open("phase2_trades_history.txt", "w") as f:
-        f.write("Phase 2: Enhanced Entries - Trade History\n")
+    with open("phase3_trades_history.txt", "w") as f:
+        f.write("Phase 3: Optimized Signal Filtering - Trade History\n")
         f.write("=" * 60 + "\n\n")
         for trade in backtest.trades:
             f.write(f"Trade #{trade.trade_id}\n")
@@ -313,11 +334,11 @@ def run_backtest_phase2():
             f.write(f"  Result: {'WIN' if trade.profit_loss > 0 else 'LOSS'}\n")
             f.write("\n")
     
-    logger.info("✅ Trade history saved to: phase2_trades_history.txt")
+    logger.info("✅ Trade history saved to: phase3_trades_history.txt")
     logger.info("")
-    logger.info("✅ PHASE 2 BACKTEST COMPLETE!")
+    logger.info("✅ PHASE 3 BACKTEST COMPLETE!")
     logger.info("=" * 60)
 
 
 if __name__ == "__main__":
-    run_backtest_phase2()
+    run_backtest_phase3()

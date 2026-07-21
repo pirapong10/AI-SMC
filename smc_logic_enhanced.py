@@ -145,7 +145,7 @@ class VolumenFilter:
     """Volume-based entry confirmation"""
     
     @staticmethod
-    def is_volume_confirmed(candles: List[Dict[str, float]], threshold: float = 1.2) -> bool:
+    def is_volume_confirmed(candles: List[Dict[str, float]], threshold: float = 1.1) -> bool:
         """
         Check if current candle has above-average volume
         
@@ -186,11 +186,14 @@ class SessionFilter:
         except:
             return SessionType.OFF_HOURS
         
-        if 8 <= hour < 16:
+        # Data is in GMT+2 broker time. Session windows in broker-local time:
+        # London: 10:00-18:00 broker (= 08:00-16:00 UTC)
+        # New York: 15:00-23:00 broker (= 13:00-21:00 UTC)
+        if 10 <= hour < 18:
             return SessionType.LONDON
-        elif 13 <= hour < 21:
+        elif 15 <= hour < 23:
             return SessionType.NEW_YORK
-        elif 22 <= hour or hour < 6:
+        elif 1 <= hour < 7:
             return SessionType.ASIA
         else:
             return SessionType.OFF_HOURS
@@ -324,18 +327,18 @@ class EnhancedTradeEntry:
         macd_line, signal_line, histogram = self.momentum.macd(candles)
         
         if signal == SMCSignal.BULLISH:
-            if rsi < 40:  # Too bearish
-                return {"valid": False, "reason": "RSI too low for bullish"}
-            if macd_line < signal_line:  # MACD not bullish
+            if rsi < 50:  # Must be in bullish territory
+                return {"valid": False, "reason": f"RSI too low for bullish ({rsi:.1f} < 50)"}
+            if macd_line < signal_line:  # MACD line must be above signal
                 return {"valid": False, "reason": "MACD not bullish"}
         elif signal == SMCSignal.BEARISH:
-            if rsi > 60:  # Too bullish
-                return {"valid": False, "reason": "RSI too high for bearish"}
-            if macd_line > signal_line:  # MACD not bearish
+            if rsi > 50:  # Must be in bearish territory
+                return {"valid": False, "reason": f"RSI too high for bearish ({rsi:.1f} > 50)"}
+            if macd_line > signal_line:  # MACD line must be below signal
                 return {"valid": False, "reason": "MACD not bearish"}
         
-        # Check 4: Confluence score
-        if confluence_score < 0.6:
+        # Check 4: Confluence score (raised threshold for higher quality signals)
+        if confluence_score < 0.70:
             return {"valid": False, "reason": "Low confluence score"}
         
         # Calculate dynamic stops using ATR
@@ -388,22 +391,25 @@ class SMCAnalyzer:
         return None
     
     def detect_choch(self, candles: List[Dict[str, float]]) -> Optional[Tuple[int, str]]:
-        """Detect Change of Character"""
-        if len(candles) < 10:
+        """Detect Change of Character — requires 2 consecutive higher lows or lower highs"""
+        if len(candles) < 15:
             return None
         
-        recent_lows = [c["low"] for c in candles[-5:]]
-        prev_lows = [c["low"] for c in candles[-10:-5]]
+        # Require structure shift across 3 windows to reduce noise
+        w1_lows  = [c["low"]  for c in candles[-15:-10]]
+        w2_lows  = [c["low"]  for c in candles[-10:-5]]
+        w3_lows  = [c["low"]  for c in candles[-5:]]
         
-        recent_highs = [c["high"] for c in candles[-5:]]
-        prev_highs = [c["high"] for c in candles[-10:-5]]
+        w1_highs = [c["high"] for c in candles[-15:-10]]
+        w2_highs = [c["high"] for c in candles[-10:-5]]
+        w3_highs = [c["high"] for c in candles[-5:]]
         
-        # Bullish: Higher lows
-        if min(recent_lows) > min(prev_lows):
+        # Bullish CHoCH: 2 consecutive higher-low windows
+        if min(w3_lows) > min(w2_lows) and min(w2_lows) > min(w1_lows):
             return (len(candles) - 1, "BULLISH")
         
-        # Bearish: Lower highs
-        if max(recent_highs) < max(prev_highs):
+        # Bearish CHoCH: 2 consecutive lower-high windows
+        if max(w3_highs) < max(w2_highs) and max(w2_highs) < max(w1_highs):
             return (len(candles) - 1, "BEARISH")
         
         return None
@@ -446,22 +452,21 @@ class SMCAnalyzer:
         
         confidence = score
         
-        # Signal determination
+        # Signal determination — require ALL 3 components aligned (high quality only)
         if liquidity and choch and fvg:
             if all(x[1] == "BULLISH" for x in [liquidity, choch, fvg]):
                 signal = SMCSignal.BULLISH
-                entry_level = (fvg[0] + fvg[1]) / 2 if fvg else entry_level
+                entry_level = (fvg[0] + fvg[1]) / 2
             elif all(x[1] == "BEARISH" for x in [liquidity, choch, fvg]):
                 signal = SMCSignal.BEARISH
-                entry_level = (fvg[0] + fvg[1]) / 2 if fvg else entry_level
+                entry_level = (fvg[0] + fvg[1]) / 2
+        # Liquidity+CHoCH without FVG: medium confidence — allow if both fully align
         elif liquidity and choch:
             if liquidity[1] == choch[1] == "BULLISH":
                 signal = SMCSignal.BULLISH
             elif liquidity[1] == choch[1] == "BEARISH":
                 signal = SMCSignal.BEARISH
-        elif fvg:
-            signal = SMCSignal.BULLISH if fvg[2] == "BULLISH" else SMCSignal.BEARISH
-            entry_level = (fvg[0] + fvg[1]) / 2
+        # FVG alone removed — too low quality, causes most false signals
         
         return {
             "liquidity_sweep": liquidity,
