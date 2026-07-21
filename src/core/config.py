@@ -35,6 +35,19 @@ class QdrantConfig(BaseSettings):
         env_prefix = "QDRANT_"
 
 
+class MT5Config(BaseSettings):
+    """MetaTrader 5 Configuration"""
+    use_mt5: bool = Field(default_factory=lambda: os.getenv("USE_MT5", "True").lower() == "true")
+    login: int = Field(default_factory=lambda: int(os.getenv("MT5_LOGIN", "0") or "0"))
+    password: str = Field(default_factory=lambda: os.getenv("MT5_PASSWORD", ""))
+    server: str = Field(default_factory=lambda: os.getenv("MT5_SERVER", ""))
+    path: str = Field(default_factory=lambda: os.getenv("MT5_PATH", ""))
+
+    class Config:
+        env_prefix = "MT5_"
+
+
+
 class TradingConfig(BaseSettings):
     """Trading Configuration"""
     symbol: str = Field(default_factory=lambda: os.getenv("SYMBOL", "XAUUSD"))
@@ -88,6 +101,7 @@ class AppConfig(BaseSettings):
 # Initialize configuration objects
 gemini_config = GeminiConfig()
 qdrant_config = QdrantConfig()
+mt5_config = MT5Config()
 trading_config = TradingConfig()
 agent_config = AgentConfig()
 backtest_config = BacktestConfig()

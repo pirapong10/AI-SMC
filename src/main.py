@@ -83,13 +83,14 @@ class AISmcTradingBot:
     
     def load_market_data(self, symbol: str, timeframe: str, num_candles: int = 100) -> List[Dict[str, float]]:
         """
-        Load mock market data for testing
-        In production, this would connect to MT5 or a broker API
+        Load market data for testing and analysis
+        First attempts to fetch real market data from MetaTrader 5 (MT5).
+        If MT5 is disabled, unavailable, or fails, falls back to mock data.
         
         Args:
-            symbol: Trading symbol
-            timeframe: Timeframe (M15, H1, etc.)
-            num_candles: Number of candles to generate
+            symbol: Trading symbol (e.g., 'XAUUSD')
+            timeframe: Timeframe (e.g., 'H1', 'M15')
+            num_candles: Number of candles to load
         
         Returns:
             List of candle data
@@ -97,6 +98,25 @@ class AISmcTradingBot:
         import random
         from datetime import datetime, timedelta
         
+        # Try MT5 if enabled
+        if self.config.get("use_mt5", True):
+            try:
+                from data.mt5_connector import MT5Connector
+                connector = MT5Connector(
+                    login=self.config.get("mt5_login", 0),
+                    password=self.config.get("mt5_password", ""),
+                    server=self.config.get("mt5_server", ""),
+                    path=self.config.get("mt5_path", "")
+                )
+                mt5_candles = connector.get_candles(symbol, timeframe, num_candles)
+                if mt5_candles and len(mt5_candles) > 0:
+                    logger.info(f"✅ Loaded {len(mt5_candles)} real MT5 candles for {symbol} {timeframe}")
+                    return mt5_candles
+                else:
+                    logger.warning("⚠️ MT5 data fetch empty/failed. Falling back to mock market data...")
+            except Exception as e:
+                logger.warning(f"⚠️ MT5 connection notice ({e}). Falling back to mock market data...")
+
         logger.info(f"📊 Generating mock market data for {symbol} {timeframe}")
         
         candles = []
@@ -195,7 +215,12 @@ def main():
         "qdrant_api_key": os.getenv("QDRANT_API_KEY", ""),
         "symbol": os.getenv("SYMBOL", "XAUUSD"),
         "account_size": float(os.getenv("ACCOUNT_SIZE", "10000")),
-        "debug": os.getenv("DEBUG", "False").lower() == "true"
+        "debug": os.getenv("DEBUG", "False").lower() == "true",
+        "use_mt5": os.getenv("USE_MT5", "True").lower() == "true",
+        "mt5_login": int(os.getenv("MT5_LOGIN", "0") or "0"),
+        "mt5_password": os.getenv("MT5_PASSWORD", ""),
+        "mt5_server": os.getenv("MT5_SERVER", ""),
+        "mt5_path": os.getenv("MT5_PATH", "")
     }
     
     # Validate API key

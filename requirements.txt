@@ -22,6 +22,10 @@ websockets==12.0
 pydantic==2.7.1
 pydantic-settings==2.2.1
 
+# MetaTrader 5 Integration
+MetaTrader5==5.0.5735
+
+
 # Utilities
 python-dotenv==1.0.0
 python-dateutil==2.8.2
