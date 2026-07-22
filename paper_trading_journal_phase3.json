@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-22T10:28:57.745905",
+  "initial_capital": 10000,
+  "current_capital": 10112.801547759682,
+  "metrics": {
+    "total_trades": 1,
+    "winning_trades": 1,
+    "losing_trades": 0,
+    "win_rate": 100.0,
+    "profit_factor": 0,
+    "total_pnl": 112.80154775968151,
+    "max_drawdown": 0,
+    "roi": 1.1280154775968152,
+    "final_capital": 10112.801547759682
+  },
+  "trades": [
+    {
+      "id": 1,
+      "entry_time": "2026-07-22T09:38:57.704742",
+      "entry_price": 4125.51,
+      "direction": "LONG",
+      "position_size": 9.587891862276846,
+      "stop_loss": 4104.1903571428575,
+      "take_profit": 4166.769285714286,
+      "exit_time": "2026-07-22T10:28:57.745905",
+      "exit_price": 4137.275,
+      "exit_reason": "SHUTDOWN",
+      "pnl": 112.80154775968151,
+      "return_pct": 1.1280154775968152,
+      "status": "CLOSED"
+    }
+  ]
+}

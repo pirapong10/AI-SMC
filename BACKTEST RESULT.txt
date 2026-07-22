@@ -1,252 +1,747 @@
-(venv) PS D:\Project\AI-SMC> python backtest.py --data XAUUSD_H1_2024.csv --capital 10000
-2026-07-21 13:29:17,558 - __main__ - INFO - ============================================================
-2026-07-21 13:29:17,558 - __main__ - INFO - 🎯 BACKTEST STARTING
-2026-07-21 13:29:17,558 - __main__ - INFO - ============================================================
-2026-07-21 13:29:17,558 - __main__ - INFO -
-📊 STEP 1: Loading historical data...
-2026-07-21 13:29:17,558 - data_loader - INFO - 📂 Data directory: data
-2026-07-21 13:29:17,593 - data_loader - INFO - ✅ Loaded: XAUUSD_H1_2024.csv (5922 rows)
-2026-07-21 13:29:17,764 - data_loader - INFO - ✅ Processed 5922 candles
-2026-07-21 13:29:17,764 - __main__ - INFO -    Total candles: 5922
-2026-07-21 13:29:17,764 - __main__ - INFO -    Date range: 2024-01-02T01:00:00 to 2024-12-31T08:00:00
-2026-07-21 13:29:17,764 - __main__ - INFO -    Price range: 1984.19 - 2790.01
-2026-07-21 13:29:17,764 - __main__ - INFO -
-⚙️  STEP 2: Initializing backtest engine...
-2026-07-21 13:29:17,764 - backtest_engine - INFO - 🎯 Backtest initialized: Capital=$10000.0
-2026-07-21 13:29:17,764 - backtest_engine - INFO -    Risk/trade: 2.0%, Daily loss limit: 5.0%, Max drawdown: 20.0%    
-2026-07-21 13:29:17,764 - __main__ - INFO -    ✅ SMC analyzer ready
-2026-07-21 13:29:17,764 - __main__ - INFO -
-🚀 STEP 3: Running backtest simulation...
-2026-07-21 13:29:17,764 - backtest_engine - INFO - 📈 Trade #1 opened: LONG 9.68 units @ 2065.1
-2026-07-21 13:29:17,764 - backtest_engine - INFO -    SL: 2044.4489999999998 (20.65), TP: 2127.053 (61.95)
-2026-07-21 13:29:17,764 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $600.00
-2026-07-21 13:29:17,764 - backtest_engine - INFO - 📉 Trade #1 closed: ❌ LOSS P&L: $-200.00 (-1.00%)
-2026-07-21 13:29:17,764 - backtest_engine - INFO - 📈 Trade #2 opened: LONG 9.59 units @ 2044.61
-2026-07-21 13:29:17,764 - backtest_engine - INFO -    SL: 2024.1639 (20.45), TP: 2105.9483 (61.34)
-2026-07-21 13:29:17,764 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $588.00
-2026-07-21 13:29:17,770 - backtest_engine - INFO - 📉 Trade #2 closed: ❌ LOSS P&L: $-196.00 (-1.00%)
-2026-07-21 13:29:17,770 - backtest_engine - INFO - 📈 Trade #3 opened: LONG 9.45 units @ 2032.2
-2026-07-21 13:29:17,771 - backtest_engine - INFO -    SL: 2011.8780000000002 (20.32), TP: 2093.166 (60.97)
-2026-07-21 13:29:17,771 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $576.24
-2026-07-21 13:29:17,773 - backtest_engine - INFO - 📉 Trade #3 closed: ❌ LOSS P&L: $-192.08 (-1.00%)
-2026-07-21 13:29:17,773 - backtest_engine - INFO - 📈 Trade #4 opened: LONG 9.38 units @ 2006.5749999999998
-2026-07-21 13:29:17,773 - backtest_engine - INFO -    SL: 1986.5092499999998 (20.07), TP: 2066.77225 (60.20)
-2026-07-21 13:29:17,773 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $564.72
-2026-07-21 13:29:17,776 - backtest_engine - INFO - 📉 Trade #4 closed: ❌ LOSS P&L: $-188.24 (-1.00%)
-2026-07-21 13:29:17,776 - backtest_engine - INFO - 📈 Trade #5 opened: LONG 9.26 units @ 1992.56
-2026-07-21 13:29:17,777 - backtest_engine - INFO -    SL: 1972.6344 (19.93), TP: 2052.3368 (59.78)
-2026-07-21 13:29:17,777 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $553.42
-2026-07-21 13:29:17,778 - backtest_engine - INFO - 📉 Trade #5 closed: ✅ WIN P&L: $553.42 (3.00%)
-2026-07-21 13:29:17,778 - backtest_engine - INFO - 📈 Trade #6 opened: LONG 9.21 units @ 2123.69
-2026-07-21 13:29:17,778 - backtest_engine - INFO -    SL: 2102.4531 (21.24), TP: 2187.4007 (63.71)
-2026-07-21 13:29:17,778 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $586.63
-2026-07-21 13:29:17,778 - backtest_engine - INFO - 📉 Trade #6 closed: ✅ WIN P&L: $586.63 (3.00%)
-2026-07-21 13:29:17,778 - backtest_engine - INFO - 📈 Trade #7 opened: LONG 9.50 units @ 2181.28
-2026-07-21 13:29:17,778 - backtest_engine - INFO -    SL: 2159.4672 (21.81), TP: 2246.7184 (65.44)
-2026-07-21 13:29:17,778 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $621.82
-2026-07-21 13:29:17,781 - backtest_engine - INFO - 📉 Trade #7 closed: ❌ LOSS P&L: $-207.27 (-1.00%)
-2026-07-21 13:29:17,781 - backtest_engine - INFO - 📈 Trade #8 opened: LONG 9.40 units @ 2160.34
-2026-07-21 13:29:17,781 - backtest_engine - INFO -    SL: 2138.7366 (21.60), TP: 2225.1502 (64.81)
-2026-07-21 13:29:17,781 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $609.39
-2026-07-21 13:29:17,782 - backtest_engine - INFO - 📉 Trade #8 closed: ✅ WIN P&L: $609.39 (3.00%)
-2026-07-21 13:29:17,782 - backtest_engine - INFO - 📈 Trade #9 opened: LONG 9.54 units @ 2255.85
-2026-07-21 13:29:17,782 - backtest_engine - INFO -    SL: 2233.2915 (22.56), TP: 2323.5254999999997 (67.68)
-2026-07-21 13:29:17,783 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $645.95
-2026-07-21 13:29:17,783 - backtest_engine - INFO - 📉 Trade #9 closed: ❌ LOSS P&L: $-215.32 (-1.00%)
-2026-07-21 13:29:17,783 - backtest_engine - INFO - 📈 Trade #10 opened: LONG 9.37 units @ 2251.56
-2026-07-21 13:29:17,784 - backtest_engine - INFO -    SL: 2229.0443999999998 (22.52), TP: 2319.1068 (67.55)
-2026-07-21 13:29:17,784 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $633.03
-2026-07-21 13:29:17,784 - backtest_engine - INFO - 📉 Trade #10 closed: ✅ WIN P&L: $633.03 (3.00%)
-2026-07-21 13:29:17,784 - backtest_engine - INFO - 📈 Trade #11 opened: LONG 9.61 units @ 2327.17
-2026-07-21 13:29:17,784 - backtest_engine - INFO -    SL: 2303.8983000000003 (23.27), TP: 2396.9851 (69.82)
-2026-07-21 13:29:17,784 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $671.01
-2026-07-21 13:29:17,784 - backtest_engine - INFO - 📉 Trade #11 closed: ❌ LOSS P&L: $-223.67 (-1.00%)
-2026-07-21 13:29:17,784 - backtest_engine - INFO - 📈 Trade #12 opened: LONG 9.37 units @ 2340.05
-2026-07-21 13:29:17,784 - backtest_engine - INFO -    SL: 2316.6495 (23.40), TP: 2410.2515000000003 (70.20)
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $657.59
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📉 Trade #12 closed: ✅ WIN P&L: $657.59 (3.00%)
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📈 Trade #13 opened: LONG 9.90 units @ 2345.885
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    SL: 2322.4261500000002 (23.46), TP: 2416.26155 (70.38)
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $697.05
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📉 Trade #13 closed: ✅ WIN P&L: $697.05 (3.00%)
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📈 Trade #14 opened: LONG 10.29 units @ 2393.64
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    SL: 2369.7036 (23.94), TP: 2465.4492 (71.81)
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $738.87
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📉 Trade #14 closed: ❌ LOSS P&L: $-246.29 (-1.00%)
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📈 Trade #15 opened: LONG 10.40 units @ 2320.33
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    SL: 2297.1267 (23.20), TP: 2389.9399 (69.61)
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $724.09
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📉 Trade #15 closed: ❌ LOSS P&L: $-241.36 (-1.00%)
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📈 Trade #16 opened: LONG 10.18 units @ 2324.1
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    SL: 2300.859 (23.24), TP: 2393.823 (69.72)
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $709.61
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📉 Trade #16 closed: ❌ LOSS P&L: $-236.54 (-1.00%)
-2026-07-21 13:29:17,786 - backtest_engine - INFO - 📈 Trade #17 opened: LONG 10.04 units @ 2308.05
-2026-07-21 13:29:17,786 - backtest_engine - INFO -    SL: 2284.9695 (23.08), TP: 2377.2915000000003 (69.24)
-2026-07-21 13:29:17,790 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $695.42
-2026-07-21 13:29:17,790 - backtest_engine - INFO - 📉 Trade #17 closed: ❌ LOSS P&L: $-231.81 (-1.00%)
-2026-07-21 13:29:17,790 - backtest_engine - INFO - 📈 Trade #18 opened: LONG 9.76 units @ 2327.9
-2026-07-21 13:29:17,790 - backtest_engine - INFO -    SL: 2304.621 (23.28), TP: 2397.737 (69.84)
-2026-07-21 13:29:17,790 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $681.51
-2026-07-21 13:29:17,791 - backtest_engine - INFO - 📉 Trade #18 closed: ❌ LOSS P&L: $-227.17 (-1.00%)
-2026-07-21 13:29:17,791 - backtest_engine - INFO - 📈 Trade #19 opened: LONG 9.61 units @ 2317.07
-2026-07-21 13:29:17,791 - backtest_engine - INFO -    SL: 2293.8993 (23.17), TP: 2386.5821 (69.51)
-2026-07-21 13:29:17,791 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $667.88
-2026-07-21 13:29:17,793 - backtest_engine - INFO - 📉 Trade #19 closed: ✅ WIN P&L: $667.88 (3.00%)
-2026-07-21 13:29:17,793 - backtest_engine - INFO - 📈 Trade #20 opened: LONG 9.87 units @ 2391.55
-2026-07-21 13:29:17,793 - backtest_engine - INFO -    SL: 2367.6345 (23.92), TP: 2463.2965000000004 (71.75)
-2026-07-21 13:29:17,793 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $707.95
-2026-07-21 13:29:17,793 - backtest_engine - INFO - 📉 Trade #20 closed: ❌ LOSS P&L: $-235.98 (-1.00%)
-2026-07-21 13:29:17,793 - backtest_engine - INFO - 📈 Trade #21 opened: LONG 9.89 units @ 2337.65
-2026-07-21 13:29:17,793 - backtest_engine - INFO -    SL: 2314.2735000000002 (23.38), TP: 2407.7795 (70.13)
-2026-07-21 13:29:17,793 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $693.80
-2026-07-21 13:29:17,796 - backtest_engine - INFO - 📉 Trade #21 closed: ❌ LOSS P&L: $-231.27 (-1.00%)
-2026-07-21 13:29:17,796 - backtest_engine - INFO - 📈 Trade #22 opened: LONG 9.87 units @ 2296.24
-2026-07-21 13:29:17,796 - backtest_engine - INFO -    SL: 2273.2776 (22.96), TP: 2365.1272 (68.89)
-2026-07-21 13:29:17,796 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $679.92
-2026-07-21 13:29:17,798 - backtest_engine - INFO - 📉 Trade #22 closed: ✅ WIN P&L: $679.92 (3.00%)
-2026-07-21 13:29:17,798 - backtest_engine - INFO - 📈 Trade #23 opened: LONG 10.21 units @ 2353.64
-2026-07-21 13:29:17,798 - backtest_engine - INFO -    SL: 2330.1036 (23.54), TP: 2424.2491999999997 (70.61)
-2026-07-21 13:29:17,799 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $720.71
-2026-07-21 13:29:17,799 - backtest_engine - INFO - 📉 Trade #23 closed: ❌ LOSS P&L: $-240.24 (-1.00%)
-2026-07-21 13:29:17,799 - backtest_engine - INFO - 📈 Trade #24 opened: LONG 10.12 units @ 2325.41
-2026-07-21 13:29:17,799 - backtest_engine - INFO -    SL: 2302.1558999999997 (23.25), TP: 2395.1722999999997 (69.76)   
-2026-07-21 13:29:17,799 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $706.30
-2026-07-21 13:29:17,799 - backtest_engine - INFO - 📉 Trade #24 closed: ❌ LOSS P&L: $-235.43 (-1.00%)
-2026-07-21 13:29:17,799 - backtest_engine - INFO - 📈 Trade #25 opened: LONG 10.04 units @ 2299.03
-2026-07-21 13:29:17,801 - backtest_engine - INFO -    SL: 2276.0397000000003 (22.99), TP: 2368.0009 (68.97)
-2026-07-21 13:29:17,801 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $692.17
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📉 Trade #25 closed: ✅ WIN P&L: $692.17 (3.00%)
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📈 Trade #26 opened: LONG 10.33 units @ 2366.41
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    SL: 2342.7459 (23.66), TP: 2437.4022999999997 (70.99)
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $733.70
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📉 Trade #26 closed: ✅ WIN P&L: $733.70 (3.00%)
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📈 Trade #27 opened: LONG 10.67 units @ 2430.2
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    SL: 2405.8979999999997 (24.30), TP: 2503.1059999999998 (72.91)   
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $777.73
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📉 Trade #27 closed: ❌ LOSS P&L: $-259.24 (-1.00%)
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📈 Trade #28 opened: LONG 10.56 units @ 2406.4
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    SL: 2382.3360000000002 (24.06), TP: 2478.592 (72.19)
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $762.17
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📉 Trade #28 closed: ❌ LOSS P&L: $-254.06 (-1.00%)
-2026-07-21 13:29:17,802 - backtest_engine - INFO - 📈 Trade #29 opened: LONG 10.49 units @ 2372.71
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    SL: 2348.9829 (23.73), TP: 2443.8913000000002 (71.18)
-2026-07-21 13:29:17,802 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $746.93
-2026-07-21 13:29:17,806 - backtest_engine - INFO - 📉 Trade #29 closed: ✅ WIN P&L: $746.93 (3.00%)
-2026-07-21 13:29:17,806 - backtest_engine - INFO - 📈 Trade #30 opened: LONG 10.79 units @ 2447.02
-2026-07-21 13:29:17,806 - backtest_engine - INFO -    SL: 2422.5498 (24.47), TP: 2520.4306 (73.41)
-2026-07-21 13:29:17,806 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $791.74
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📉 Trade #30 closed: ❌ LOSS P&L: $-263.91 (-1.00%)
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📈 Trade #31 opened: LONG 10.59 units @ 2441.36
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    SL: 2416.9464000000003 (24.41), TP: 2514.6008 (73.24)
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $775.91
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📉 Trade #31 closed: ❌ LOSS P&L: $-258.64 (-1.00%)
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📈 Trade #32 opened: LONG 10.53 units @ 2407.63
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    SL: 2383.5537 (24.08), TP: 2479.8589 (72.23)
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $760.39
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📉 Trade #32 closed: ❌ LOSS P&L: $-253.46 (-1.00%)
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📈 Trade #33 opened: LONG 10.37 units @ 2394.69
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    SL: 2370.7431 (23.95), TP: 2466.5307000000003 (71.84)
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $745.18
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📉 Trade #33 closed: ✅ WIN P&L: $745.18 (3.00%)
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📈 Trade #34 opened: LONG 10.66 units @ 2470.44
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    SL: 2445.7356 (24.70), TP: 2544.5532 (74.11)
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $789.89
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📉 Trade #34 closed: ❌ LOSS P&L: $-263.30 (-1.00%)
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📈 Trade #35 opened: LONG 10.54 units @ 2447.87
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    SL: 2423.3913 (24.48), TP: 2521.3061 (73.44)
-2026-07-21 13:29:17,807 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $774.10
-2026-07-21 13:29:17,807 - backtest_engine - INFO - 📉 Trade #35 closed: ✅ WIN P&L: $774.10 (3.00%)
-2026-07-21 13:29:17,811 - backtest_engine - INFO - 📈 Trade #36 opened: LONG 10.82 units @ 2526.75
-2026-07-21 13:29:17,811 - backtest_engine - INFO -    SL: 2501.4825 (25.27), TP: 2602.5525 (75.80)
-2026-07-21 13:29:17,811 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $820.54
-2026-07-21 13:29:17,811 - backtest_engine - INFO - 📉 Trade #36 closed: ❌ LOSS P&L: $-273.51 (-1.00%)
-2026-07-21 13:29:17,811 - backtest_engine - INFO - 📈 Trade #37 opened: LONG 10.65 units @ 2516.8
-2026-07-21 13:29:17,811 - backtest_engine - INFO -    SL: 2491.632 (25.17), TP: 2592.304 (75.50)
-2026-07-21 13:29:17,812 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $804.13
-2026-07-21 13:29:17,812 - backtest_engine - INFO - 📉 Trade #37 closed: ❌ LOSS P&L: $-268.04 (-1.00%)
-2026-07-21 13:29:17,812 - backtest_engine - INFO - 📈 Trade #38 opened: LONG 10.54 units @ 2493.38
-2026-07-21 13:29:17,812 - backtest_engine - INFO -    SL: 2468.4462000000003 (24.93), TP: 2568.1814 (74.80)
-2026-07-21 13:29:17,812 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $788.05
-2026-07-21 13:29:17,814 - backtest_engine - INFO - 📉 Trade #38 closed: ✅ WIN P&L: $788.05 (3.00%)
-2026-07-21 13:29:17,814 - backtest_engine - INFO - 📈 Trade #39 opened: LONG 10.84 units @ 2567.93
-2026-07-21 13:29:17,814 - backtest_engine - INFO -    SL: 2542.2507 (25.68), TP: 2644.9678999999996 (77.04)
-2026-07-21 13:29:17,814 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $835.33
-2026-07-21 13:29:17,814 - backtest_engine - INFO - 📉 Trade #39 closed: ✅ WIN P&L: $835.33 (3.00%)
-2026-07-21 13:29:17,814 - backtest_engine - INFO - 📈 Trade #40 opened: LONG 11.17 units @ 2643.15
-2026-07-21 13:29:17,814 - backtest_engine - INFO -    SL: 2616.7185 (26.43), TP: 2722.4445 (79.29)
-2026-07-21 13:29:17,814 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $885.45
-2026-07-21 13:29:17,814 - backtest_engine - INFO - 📉 Trade #40 closed: ❌ LOSS P&L: $-295.15 (-1.00%)
-2026-07-21 13:29:17,814 - backtest_engine - INFO - 📈 Trade #41 opened: LONG 11.03 units @ 2621.98
-2026-07-21 13:29:17,814 - backtest_engine - INFO -    SL: 2595.7602 (26.22), TP: 2700.6394 (78.66)
-2026-07-21 13:29:17,814 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $867.74
-2026-07-21 13:29:17,819 - backtest_engine - INFO - 📉 Trade #41 closed: ✅ WIN P&L: $867.74 (3.00%)
-2026-07-21 13:29:17,819 - backtest_engine - INFO - 📈 Trade #42 opened: LONG 11.31 units @ 2711.42
-2026-07-21 13:29:17,819 - backtest_engine - INFO -    SL: 2684.3058 (27.11), TP: 2792.7626 (81.34)
-2026-07-21 13:29:17,819 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $919.81
-2026-07-21 13:29:17,821 - backtest_engine - INFO - 📉 Trade #42 closed: ❌ LOSS P&L: $-306.60 (-1.00%)
-2026-07-21 13:29:17,822 - backtest_engine - INFO - 📈 Trade #43 opened: LONG 11.27 units @ 2666.52
-2026-07-21 13:29:17,822 - backtest_engine - INFO -    SL: 2639.8548 (26.67), TP: 2746.5156 (80.00)
-2026-07-21 13:29:17,822 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $901.41
-2026-07-21 13:29:17,822 - backtest_engine - INFO - 📉 Trade #43 closed: ❌ LOSS P&L: $-300.47 (-1.00%)
-2026-07-21 13:29:17,822 - backtest_engine - INFO - 📈 Trade #44 opened: LONG 11.22 units @ 2624.09
-2026-07-21 13:29:17,822 - backtest_engine - INFO -    SL: 2597.8491000000004 (26.24), TP: 2702.8127 (78.72)
-2026-07-21 13:29:17,822 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $883.38
-2026-07-21 13:29:17,822 - backtest_engine - INFO - 📉 Trade #44 closed: ❌ LOSS P&L: $-294.46 (-1.00%)
-2026-07-21 13:29:17,822 - backtest_engine - INFO - 📈 Trade #45 opened: LONG 11.05 units @ 2611.48
-2026-07-21 13:29:17,823 - backtest_engine - INFO -    SL: 2585.3652 (26.11), TP: 2689.8244 (78.34)
-2026-07-21 13:29:17,823 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $865.72
-2026-07-21 13:29:17,823 - backtest_engine - INFO - 📉 Trade #45 closed: ❌ LOSS P&L: $-288.57 (-1.00%)
-2026-07-21 13:29:17,824 - backtest_engine - INFO - 📈 Trade #46 opened: LONG 11.05 units @ 2559.7
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    SL: 2534.1029999999996 (25.60), TP: 2636.491 (76.79)
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $848.40
-2026-07-21 13:29:17,824 - backtest_engine - INFO - 📉 Trade #46 closed: ✅ WIN P&L: $848.40 (3.00%)
-2026-07-21 13:29:17,824 - backtest_engine - INFO - 📈 Trade #47 opened: LONG 11.38 units @ 2635.22
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    SL: 2608.8678 (26.35), TP: 2714.2765999999997 (79.06)
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $899.31
-2026-07-21 13:29:17,824 - backtest_engine - INFO - 📉 Trade #47 closed: ✅ WIN P&L: $899.31 (3.00%)
-2026-07-21 13:29:17,824 - backtest_engine - INFO - 📈 Trade #48 opened: LONG 12.10 units @ 2625.97
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    SL: 2599.7102999999997 (26.26), TP: 2704.7491 (78.78)
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $953.26
-2026-07-21 13:29:17,824 - backtest_engine - INFO - 📉 Trade #48 closed: ✅ WIN P&L: $953.26 (3.00%)
-2026-07-21 13:29:17,824 - backtest_engine - INFO - 📈 Trade #49 opened: LONG 12.40 units @ 2715.22
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    SL: 2688.0678 (27.15), TP: 2796.6766 (81.46)
-2026-07-21 13:29:17,824 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $1010.46
-2026-07-21 13:29:17,828 - backtest_engine - INFO - 📉 Trade #49 closed: ❌ LOSS P&L: $-336.82 (-1.00%)
-2026-07-21 13:29:17,828 - backtest_engine - INFO - 📈 Trade #50 opened: LONG 12.44 units @ 2653.68
-2026-07-21 13:29:17,828 - backtest_engine - INFO -    SL: 2627.1432 (26.54), TP: 2733.2904 (79.61)
-2026-07-21 13:29:17,828 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $990.25
-2026-07-21 13:29:17,828 - backtest_engine - INFO - 📉 Trade #50 closed: ❌ LOSS P&L: $-330.08 (-1.00%)
-2026-07-21 13:29:17,829 - backtest_engine - INFO - 📈 Trade #51 opened: LONG 12.38 units @ 2612.9
-2026-07-21 13:29:17,829 - backtest_engine - INFO -    SL: 2586.771 (26.13), TP: 2691.2870000000003 (78.39)
-2026-07-21 13:29:17,829 - backtest_engine - INFO -    R:R ratio: 1:3.00, Capital at risk: $970.45
-2026-07-21 13:29:17,830 - backtest_engine - INFO - 📉 Trade #51 closed: ❌ LOSS P&L: $-64.38 (-0.20%)
-2026-07-21 13:29:17,830 - __main__ - INFO -
+(venv) PS D:\Project\AI-SMC>
+
+
+                             python backtest_phase2.py --data XAUUSD_H1_2024.csv --capital 10000
+2026-07-21 17:07:03,173 - __main__ - INFO - ============================================================
+2026-07-21 17:07:03,176 - __main__ - INFO - 🎯 PHASE 2 BACKTEST: ENHANCED ENTRIES
+2026-07-21 17:07:03,177 - __main__ - INFO - ============================================================
+2026-07-21 17:07:03,177 - __main__ - INFO -
+2026-07-21 17:07:03,177 - __main__ - INFO - 📊 STEP 1: Loading historical data...
+2026-07-21 17:07:03,177 - data_loader - INFO - 📂 Data directory: data
+2026-07-21 17:07:03,184 - data_loader - INFO - ✅ Loaded: XAUUSD_H1_2024.csv (5922 rows)
+2026-07-21 17:07:03,332 - data_loader - INFO - ✅ Processed 5922 candles
+2026-07-21 17:07:03,332 - __main__ - INFO -    Total candles: 5922
+2026-07-21 17:07:03,332 - __main__ - INFO -    Date range: 2024-01-02T01:00:00 to 2024-12-31T08:00:00
+2026-07-21 17:07:03,332 - __main__ - INFO -    Price range: 1984.19 - 2790.01
+2026-07-21 17:07:03,332 - __main__ - INFO -
+2026-07-21 17:07:03,332 - __main__ - INFO - ⚙️  STEP 2: Initializing backtest engine...
+2026-07-21 17:07:03,332 - backtest_engine - INFO - 🎯 Backtest initialized: Capital=$10000
+2026-07-21 17:07:03,332 - backtest_engine - INFO -    Risk/trade: 2.0%, Daily loss limit: 5.0%, Max drawdown: 20.0%    
+2026-07-21 17:07:03,332 - __main__ - INFO -    ✅ SMC analyzer ready
+2026-07-21 17:07:03,332 - __main__ - INFO -    ✅ Multi-TF analyzer ready
+2026-07-21 17:07:03,332 - __main__ - INFO -    ✅ Entry validator ready
+2026-07-21 17:07:03,332 - __main__ - INFO -
+2026-07-21 17:07:03,343 - __main__ - INFO -    ✅ Resampled to H4: 1480 candles
+2026-07-21 17:07:03,343 - __main__ - INFO -    ✅ Resampled to M15: 5919 candles
+2026-07-21 17:07:03,343 - __main__ - INFO -
+2026-07-21 17:07:03,343 - __main__ - INFO - 🚀 STEP 3: Running backtest simulation...
+2026-07-21 17:07:03,345 - backtest_engine - INFO - 📈 Trade #1 opened: SHORT 22.05 units @ 2032.41
+2026-07-21 17:07:03,345 - backtest_engine - INFO -    SL: 2041.481785714286 (9.07), TP: 2014.2664285714286 (18.14)     
+2026-07-21 17:07:03,345 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $400.00
+2026-07-21 17:07:03,345 - backtest_engine - INFO - 📉 Trade #1 closed: ❌ LOSS P&L: $-200.00 (-0.45%)
+2026-07-21 17:07:03,345 - backtest_engine - INFO - 📈 Trade #2 opened: LONG 35.28 units @ 2047.99
+2026-07-21 17:07:03,345 - backtest_engine - INFO -    SL: 2042.4346428571428 (5.56), TP: 2059.1007142857143 (11.11)    
+2026-07-21 17:07:03,345 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $392.00
+2026-07-21 17:07:03,346 - backtest_engine - INFO - 📉 Trade #2 closed: ❌ LOSS P&L: $-196.00 (-0.27%)
+2026-07-21 17:07:03,346 - backtest_engine - INFO - 📈 Trade #3 opened: SHORT 33.35 units @ 2039.35
+2026-07-21 17:07:03,346 - backtest_engine - INFO -    SL: 2045.1089285714286 (5.76), TP: 2027.8321428571428 (11.52)    
+2026-07-21 17:07:03,346 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $384.16
+2026-07-21 17:07:03,346 - backtest_engine - INFO - 📉 Trade #3 closed: ❌ LOSS P&L: $-192.08 (-0.28%)
+2026-07-21 17:07:03,347 - backtest_engine - INFO - 📈 Trade #4 opened: SHORT 30.84 units @ 2039.94
+2026-07-21 17:07:03,348 - backtest_engine - INFO -    SL: 2046.0428571428572 (6.10), TP: 2027.7342857142858 (12.21)    
+2026-07-21 17:07:03,348 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $376.48
+2026-07-21 17:07:03,348 - backtest_engine - INFO - 📉 Trade #4 closed: ❌ LOSS P&L: $-188.24 (-0.30%)
+2026-07-21 17:07:03,349 - backtest_engine - INFO - 📈 Trade #5 opened: LONG 20.32 units @ 2032.2
+2026-07-21 17:07:03,351 - backtest_engine - INFO -    SL: 2023.1217857142858 (9.08), TP: 2050.3564285714288 (18.16)    
+2026-07-21 17:07:03,351 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $368.95
+2026-07-21 17:07:03,351 - backtest_engine - INFO - 📉 Trade #5 closed: ❌ LOSS P&L: $-184.47 (-0.45%)
+2026-07-21 17:07:03,352 - backtest_engine - INFO - 📈 Trade #6 opened: SHORT 26.65 units @ 2023.7
+2026-07-21 17:07:03,352 - backtest_engine - INFO -    SL: 2030.4832142857144 (6.78), TP: 2010.1335714285715 (13.57)    
+2026-07-21 17:07:03,352 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $361.57
+2026-07-21 17:07:03,352 - backtest_engine - INFO - 📉 Trade #6 closed: ❌ LOSS P&L: $-180.78 (-0.34%)
+2026-07-21 17:07:03,352 - backtest_engine - INFO - 📈 Trade #7 opened: LONG 41.71 units @ 2032.42
+2026-07-21 17:07:03,352 - backtest_engine - INFO -    SL: 2028.172857142857 (4.25), TP: 2040.9142857142858 (8.49)      
+2026-07-21 17:07:03,352 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $354.34
+2026-07-21 17:07:03,352 - backtest_engine - INFO - 📉 Trade #7 closed: ❌ LOSS P&L: $-177.17 (-0.21%)
+2026-07-21 17:07:03,353 - backtest_engine - INFO - 📈 Trade #8 opened: LONG 24.17 units @ 2055.97
+2026-07-21 17:07:03,353 - backtest_engine - INFO -    SL: 2048.7871428571425 (7.18), TP: 2070.335714285714 (14.37)     
+2026-07-21 17:07:03,353 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $347.25
+2026-07-21 17:07:03,353 - backtest_engine - INFO - 📉 Trade #8 closed: ❌ LOSS P&L: $-173.63 (-0.35%)
+2026-07-21 17:07:03,353 - backtest_engine - INFO - 📈 Trade #9 opened: SHORT 32.95 units @ 2053.27
+2026-07-21 17:07:03,353 - backtest_engine - INFO -    SL: 2058.4332142857143 (5.16), TP: 2042.9435714285712 (10.33)    
+2026-07-21 17:07:03,353 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $340.31
+2026-07-21 17:07:03,353 - backtest_engine - INFO - 📉 Trade #9 closed: ✅ WIN P&L: $340.31 (0.50%)
+2026-07-21 17:07:03,353 - backtest_engine - INFO - 📈 Trade #10 opened: SHORT 37.79 units @ 2039.89
+2026-07-21 17:07:03,353 - backtest_engine - INFO -    SL: 2044.5732142857144 (4.68), TP: 2030.5235714285714 (9.37)     
+2026-07-21 17:07:03,353 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $353.92
+2026-07-21 17:07:03,353 - backtest_engine - INFO - 📉 Trade #10 closed: ❌ LOSS P&L: $-176.96 (-0.23%)
+2026-07-21 17:07:03,356 - backtest_engine - INFO - 📈 Trade #11 opened: SHORT 18.75 units @ 2007.04
+2026-07-21 17:07:03,356 - backtest_engine - INFO -    SL: 2016.2907142857143 (9.25), TP: 1988.5385714285715 (18.50)
+2026-07-21 17:07:03,356 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $346.84
+2026-07-21 17:07:03,356 - backtest_engine - INFO - 📉 Trade #11 closed: ❌ LOSS P&L: $-173.42 (-0.46%)
+2026-07-21 17:07:03,356 - backtest_engine - INFO - 📈 Trade #12 opened: LONG 31.62 units @ 2031.64
+2026-07-21 17:07:03,357 - backtest_engine - INFO -    SL: 2026.2657142857145 (5.37), TP: 2042.3885714285716 (10.75)    
+2026-07-21 17:07:03,357 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $339.90
+2026-07-21 17:07:03,357 - backtest_engine - INFO - 📉 Trade #12 closed: ❌ LOSS P&L: $-169.95 (-0.26%)
+2026-07-21 17:07:03,357 - backtest_engine - INFO - 📈 Trade #13 opened: SHORT 23.51 units @ 2023.14
+2026-07-21 17:07:03,357 - backtest_engine - INFO -    SL: 2030.2242857142858 (7.08), TP: 2008.9714285714285 (14.17)    
+2026-07-21 17:07:03,357 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $333.10
+2026-07-21 17:07:03,357 - backtest_engine - INFO - 📉 Trade #13 closed: ❌ LOSS P&L: $-166.55 (-0.35%)
+2026-07-21 17:07:03,358 - backtest_engine - INFO - 📈 Trade #14 opened: LONG 33.45 units @ 2032.68
+2026-07-21 17:07:03,358 - backtest_engine - INFO -    SL: 2027.8007142857143 (4.88), TP: 2042.4385714285715 (9.76)     
+2026-07-21 17:07:03,358 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $326.44
+2026-07-21 17:07:03,358 - backtest_engine - INFO - 📉 Trade #14 closed: ❌ LOSS P&L: $-163.22 (-0.24%)
+2026-07-21 17:07:03,359 - backtest_engine - INFO - 📈 Trade #15 opened: LONG 27.83 units @ 2052.28
+2026-07-21 17:07:03,359 - backtest_engine - INFO -    SL: 2046.531785714286 (5.75), TP: 2063.776428571429 (11.50)      
+2026-07-21 17:07:03,359 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $319.91
+2026-07-21 17:07:03,359 - backtest_engine - INFO - 📉 Trade #15 closed: ❌ LOSS P&L: $-159.96 (-0.28%)
+2026-07-21 17:07:03,360 - backtest_engine - INFO - 📈 Trade #16 opened: SHORT 25.43 units @ 2033.41
+2026-07-21 17:07:03,360 - backtest_engine - INFO -    SL: 2039.5739285714287 (6.16), TP: 2021.0821428571428 (12.33)    
+2026-07-21 17:07:03,360 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $313.52
+2026-07-21 17:07:03,360 - backtest_engine - INFO - 📉 Trade #16 closed: ❌ LOSS P&L: $-156.76 (-0.30%)
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📈 Trade #17 opened: SHORT 26.08 units @ 2022.69
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    SL: 2028.579642857143 (5.89), TP: 2010.9107142857142 (11.78)     
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $307.24
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📉 Trade #17 closed: ❌ LOSS P&L: $-153.62 (-0.29%)
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📈 Trade #18 opened: LONG 29.24 units @ 2030.63
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    SL: 2025.481785714286 (5.15), TP: 2040.9264285714285 (10.30)     
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $301.10
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📉 Trade #18 closed: ✅ WIN P&L: $301.10 (0.51%)
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📈 Trade #19 opened: SHORT 31.11 units @ 2029.04
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    SL: 2034.0735714285713 (5.03), TP: 2018.972857142857 (10.07)     
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $313.14
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📉 Trade #19 closed: ❌ LOSS P&L: $-156.57 (-0.25%)
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📈 Trade #20 opened: SHORT 48.28 units @ 2032.4
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    SL: 2035.5778571428573 (3.18), TP: 2026.044285714286 (6.36)      
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $306.88
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📉 Trade #20 closed: ✅ WIN P&L: $306.88 (0.31%)
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📈 Trade #21 opened: LONG 48.90 units @ 2023.71
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    SL: 2020.4464285714284 (3.26), TP: 2030.237142857143 (6.53)      
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $319.16
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📉 Trade #21 closed: ❌ LOSS P&L: $-159.58 (-0.16%)
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📈 Trade #22 opened: LONG 53.96 units @ 2027.73
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    SL: 2024.8317857142858 (2.90), TP: 2033.5264285714284 (5.80)     
+2026-07-21 17:07:03,361 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $312.77
+2026-07-21 17:07:03,361 - backtest_engine - INFO - 📉 Trade #22 closed: ❌ LOSS P&L: $-156.39 (-0.14%)
+2026-07-21 17:07:03,365 - backtest_engine - INFO - 📈 Trade #23 opened: SHORT 32.04 units @ 1987.9
+2026-07-21 17:07:03,365 - backtest_engine - INFO -    SL: 1992.6839285714286 (4.78), TP: 1978.332142857143 (9.57)      
+2026-07-21 17:07:03,365 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $306.52
+2026-07-21 17:07:03,365 - backtest_engine - INFO - 📉 Trade #23 closed: ❌ LOSS P&L: $-153.26 (-0.24%)
+2026-07-21 17:07:03,365 - backtest_engine - INFO - 📈 Trade #24 opened: LONG 47.25 units @ 1997.95
+2026-07-21 17:07:03,365 - backtest_engine - INFO -    SL: 1994.7710714285715 (3.18), TP: 2004.3078571428573 (6.36)     
+2026-07-21 17:07:03,365 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $300.39
+2026-07-21 17:07:03,365 - backtest_engine - INFO - 📉 Trade #24 closed: ✅ WIN P&L: $300.39 (0.32%)
+2026-07-21 17:07:03,365 - backtest_engine - INFO - 📈 Trade #25 opened: LONG 34.77 units @ 2003.8
+2026-07-21 17:07:03,365 - backtest_engine - INFO -    SL: 1999.3075 (4.49), TP: 2012.7849999999999 (8.98)
+2026-07-21 17:07:03,366 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $312.40
+2026-07-21 17:07:03,366 - backtest_engine - INFO - 📉 Trade #25 closed: ❌ LOSS P&L: $-156.20 (-0.22%)
+2026-07-21 17:07:03,366 - backtest_engine - INFO - 📈 Trade #26 opened: LONG 22.39 units @ 2013.86
+2026-07-21 17:07:03,367 - backtest_engine - INFO -    SL: 2007.0242857142855 (6.84), TP: 2027.5314285714285 (13.67)    
+2026-07-21 17:07:03,367 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $306.15
+2026-07-21 17:07:03,367 - backtest_engine - INFO - 📉 Trade #26 closed: ✅ WIN P&L: $306.15 (0.68%)
+2026-07-21 17:07:03,367 - backtest_engine - INFO - 📈 Trade #27 opened: LONG 43.48 units @ 2026.7
+2026-07-21 17:07:03,367 - backtest_engine - INFO -    SL: 2023.0389285714286 (3.66), TP: 2034.0221428571429 (7.32)     
+2026-07-21 17:07:03,367 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $318.40
+2026-07-21 17:07:03,368 - backtest_engine - INFO - 📉 Trade #27 closed: ❌ LOSS P&L: $-159.20 (-0.18%)
+2026-07-21 17:07:03,368 - backtest_engine - INFO - 📈 Trade #28 opened: SHORT 34.59 units @ 2021.75
+2026-07-21 17:07:03,368 - backtest_engine - INFO -    SL: 2026.2607142857144 (4.51), TP: 2012.7285714285715 (9.02)     
+2026-07-21 17:07:03,368 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $312.03
+2026-07-21 17:07:03,368 - backtest_engine - INFO - 📉 Trade #28 closed: ❌ LOSS P&L: $-156.02 (-0.22%)
+2026-07-21 17:07:03,369 - backtest_engine - INFO - 📈 Trade #29 opened: SHORT 33.46 units @ 2024.96
+2026-07-21 17:07:03,369 - backtest_engine - INFO -    SL: 2029.5296428571428 (4.57), TP: 2015.8207142857143 (9.14)     
+2026-07-21 17:07:03,369 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $305.79
+2026-07-21 17:07:03,370 - backtest_engine - INFO - 📉 Trade #29 closed: ❌ LOSS P&L: $-152.90 (-0.23%)
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📈 Trade #30 opened: LONG 22.93 units @ 2037.93
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    SL: 2031.3942857142858 (6.54), TP: 2051.0014285714287 (13.07)    
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $299.68
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📉 Trade #30 closed: ❌ LOSS P&L: $-149.84 (-0.32%)
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📈 Trade #31 opened: LONG 37.69 units @ 2034.0
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    SL: 2030.1042857142857 (3.90), TP: 2041.7914285714285 (7.79)     
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $293.68
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📉 Trade #31 closed: ❌ LOSS P&L: $-146.84 (-0.19%)
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📈 Trade #32 opened: SHORT 32.63 units @ 2029.17
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    SL: 2033.5800000000002 (4.41), TP: 2020.35 (8.82)
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $287.81
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📉 Trade #32 closed: ❌ LOSS P&L: $-143.90 (-0.22%)
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📈 Trade #33 opened: SHORT 36.88 units @ 2033.77
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    SL: 2037.5939285714285 (3.82), TP: 2026.1221428571428 (7.65)     
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $282.05
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📉 Trade #33 closed: ✅ WIN P&L: $282.05 (0.38%)
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📈 Trade #34 opened: SHORT 45.24 units @ 2027.38
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    SL: 2030.622142857143 (3.24), TP: 2020.8957142857143 (6.48)      
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $293.34
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📉 Trade #34 closed: ❌ LOSS P&L: $-146.67 (-0.16%)
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📈 Trade #35 opened: SHORT 45.21 units @ 2030.26
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    SL: 2033.4389285714285 (3.18), TP: 2023.902142857143 (6.36)      
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $287.47
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📉 Trade #35 closed: ❌ LOSS P&L: $-143.73 (-0.16%)
+2026-07-21 17:07:03,371 - backtest_engine - INFO - 📈 Trade #36 opened: LONG 15.65 units @ 2148.22
+2026-07-21 17:07:03,371 - backtest_engine - INFO -    SL: 2139.221071428571 (9.00), TP: 2166.2178571428567 (18.00)     
+2026-07-21 17:07:03,375 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $281.72
+2026-07-21 17:07:03,376 - backtest_engine - INFO - 📉 Trade #36 closed: ✅ WIN P&L: $281.72 (0.84%)
+2026-07-21 17:07:03,376 - backtest_engine - INFO - 📈 Trade #37 opened: LONG 30.52 units @ 2163.6
+2026-07-21 17:07:03,376 - backtest_engine - INFO -    SL: 2158.8 (4.80), TP: 2173.2 (9.60)
+2026-07-21 17:07:03,376 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $292.99
+2026-07-21 17:07:03,376 - backtest_engine - INFO - 📉 Trade #37 closed: ✅ WIN P&L: $292.99 (0.44%)
+2026-07-21 17:07:03,376 - backtest_engine - INFO - 📈 Trade #38 opened: LONG 24.19 units @ 2173.64
+2026-07-21 17:07:03,376 - backtest_engine - INFO -    SL: 2167.342142857143 (6.30), TP: 2186.235714285714 (12.60)      
+2026-07-21 17:07:03,376 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $304.71
+2026-07-21 17:07:03,376 - backtest_engine - INFO - 📉 Trade #38 closed: ❌ LOSS P&L: $-152.35 (-0.29%)
+2026-07-21 17:07:03,376 - backtest_engine - INFO - 📈 Trade #39 opened: SHORT 26.61 units @ 2162.57
+2026-07-21 17:07:03,376 - backtest_engine - INFO -    SL: 2168.1800000000003 (5.61), TP: 2151.3500000000004 (11.22)    
+2026-07-21 17:07:03,376 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $298.61
+2026-07-21 17:07:03,377 - backtest_engine - INFO - 📉 Trade #39 closed: ❌ LOSS P&L: $-149.31 (-0.26%)
+2026-07-21 17:07:03,377 - backtest_engine - INFO - 📈 Trade #40 opened: SHORT 19.20 units @ 2156.81
+2026-07-21 17:07:03,377 - backtest_engine - INFO -    SL: 2164.4310714285716 (7.62), TP: 2141.567857142857 (15.24)     
+2026-07-21 17:07:03,377 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $292.64
+2026-07-21 17:07:03,378 - backtest_engine - INFO - 📉 Trade #40 closed: ❌ LOSS P&L: $-146.32 (-0.35%)
+2026-07-21 17:07:03,379 - backtest_engine - INFO - 📈 Trade #41 opened: LONG 19.15 units @ 2193.81
+2026-07-21 17:07:03,379 - backtest_engine - INFO -    SL: 2186.320714285714 (7.49), TP: 2208.7885714285712 (14.98)     
+2026-07-21 17:07:03,379 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $286.79
+2026-07-21 17:07:03,379 - backtest_engine - INFO - 📉 Trade #41 closed: ❌ LOSS P&L: $-143.39 (-0.34%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #42 opened: LONG 13.79 units @ 2206.92
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2196.7296428571426 (10.19), TP: 2227.3007142857145 (20.38)   
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $281.05
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #42 closed: ✅ WIN P&L: $281.05 (0.92%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #43 opened: SHORT 12.33 units @ 2246.65
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2258.505357142857 (11.86), TP: 2222.9392857142857 (23.71)    
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $292.29
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #43 closed: ❌ LOSS P&L: $-146.15 (-0.53%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #44 opened: LONG 12.48 units @ 2260.71
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2249.2371428571428 (11.47), TP: 2283.6557142857146 (22.95)   
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $286.45
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #44 closed: ✅ WIN P&L: $286.45 (1.01%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #45 opened: SHORT 16.47 units @ 2274.93
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2283.9717857142855 (9.04), TP: 2256.8464285714285 (18.08)    
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $297.91
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #45 closed: ❌ LOSS P&L: $-148.95 (-0.40%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #46 opened: LONG 13.38 units @ 2290.84
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2279.930714285714 (10.91), TP: 2312.658571428572 (21.82)     
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $291.95
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #46 closed: ✅ WIN P&L: $291.95 (0.95%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #47 opened: LONG 10.30 units @ 2327.17
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2312.4314285714286 (14.74), TP: 2356.647142857143 (29.48)    
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $303.63
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #47 closed: ❌ LOSS P&L: $-151.81 (-0.63%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #48 opened: LONG 11.63 units @ 2352.8
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2340.007142857143 (12.79), TP: 2378.3857142857146 (25.59)    
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $297.55
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #48 closed: ❌ LOSS P&L: $-148.78 (-0.54%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #49 opened: SHORT 12.57 units @ 2333.93
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    SL: 2345.5260714285714 (11.60), TP: 2310.7378571428567 (23.19)   
+2026-07-21 17:07:03,380 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $291.60
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📉 Trade #49 closed: ❌ LOSS P&L: $-145.80 (-0.50%)
+2026-07-21 17:07:03,380 - backtest_engine - INFO - 📈 Trade #50 opened: LONG 13.35 units @ 2343.29
+2026-07-21 17:07:03,385 - backtest_engine - INFO -    SL: 2332.590714285714 (10.70), TP: 2364.6885714285713 (21.40)    
+2026-07-21 17:07:03,385 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $285.77
+2026-07-21 17:07:03,385 - backtest_engine - INFO - 📉 Trade #50 closed: ❌ LOSS P&L: $-142.89 (-0.46%)
+2026-07-21 17:07:03,385 - backtest_engine - INFO - 📈 Trade #51 opened: SHORT 10.08 units @ 2348.75
+2026-07-21 17:07:03,385 - backtest_engine - INFO -    SL: 2362.6432142857143 (13.89), TP: 2320.9635714285714 (27.79)   
+2026-07-21 17:07:03,385 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $280.06
+2026-07-21 17:07:03,386 - backtest_engine - INFO - 📉 Trade #51 closed: ❌ LOSS P&L: $-140.03 (-0.59%)
+2026-07-21 17:07:03,386 - backtest_engine - INFO - 📈 Trade #52 opened: SHORT 12.74 units @ 2381.06
+2026-07-21 17:07:03,386 - backtest_engine - INFO -    SL: 2391.8278571428573 (10.77), TP: 2359.5242857142857 (21.54)   
+2026-07-21 17:07:03,386 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $274.45
+2026-07-21 17:07:03,386 - backtest_engine - INFO - 📉 Trade #52 closed: ❌ LOSS P&L: $-137.23 (-0.45%)
+2026-07-21 17:07:03,386 - backtest_engine - INFO - 📈 Trade #53 opened: LONG 13.87 units @ 2393.28
+2026-07-21 17:07:03,387 - backtest_engine - INFO -    SL: 2383.5867857142857 (9.69), TP: 2412.6664285714287 (19.39)
+2026-07-21 17:07:03,387 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $268.97
+2026-07-21 17:07:03,387 - backtest_engine - INFO - 📉 Trade #53 closed: ❌ LOSS P&L: $-134.48 (-0.41%)
+2026-07-21 17:07:03,387 - backtest_engine - INFO - 📈 Trade #54 opened: LONG 14.78 units @ 2379.55
+2026-07-21 17:07:03,387 - backtest_engine - INFO -    SL: 2370.6303571428575 (8.92), TP: 2397.3892857142855 (17.84)    
+2026-07-21 17:07:03,387 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $263.59
+2026-07-21 17:07:03,387 - backtest_engine - INFO - 📉 Trade #54 closed: ❌ LOSS P&L: $-131.79 (-0.37%)
+2026-07-21 17:07:03,388 - backtest_engine - INFO - 📈 Trade #55 opened: SHORT 9.38 units @ 2338.54
+2026-07-21 17:07:03,388 - backtest_engine - INFO -    SL: 2352.304642857143 (13.76), TP: 2311.010714285714 (27.53)     
+2026-07-21 17:07:03,388 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $258.31
+2026-07-21 17:07:03,388 - backtest_engine - INFO - 📉 Trade #55 closed: ✅ WIN P&L: $258.31 (1.18%)
+2026-07-21 17:07:03,388 - backtest_engine - INFO - 📈 Trade #56 opened: LONG 6.81 units @ 2320.33
+2026-07-21 17:07:03,388 - backtest_engine - INFO -    SL: 2300.6092857142858 (19.72), TP: 2359.7714285714287 (39.44)   
+2026-07-21 17:07:03,388 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $268.65
+2026-07-21 17:07:03,390 - backtest_engine - INFO - 📉 Trade #56 closed: ❌ LOSS P&L: $-134.32 (-0.85%)
+2026-07-21 17:07:03,390 - backtest_engine - INFO - 📈 Trade #57 opened: LONG 11.99 units @ 2327.9
+2026-07-21 17:07:03,390 - backtest_engine - INFO -    SL: 2316.92 (10.98), TP: 2349.86 (21.96)
+2026-07-21 17:07:03,391 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $263.27
+2026-07-21 17:07:03,391 - backtest_engine - INFO - 📉 Trade #57 closed: ❌ LOSS P&L: $-131.64 (-0.47%)
+2026-07-21 17:07:03,391 - backtest_engine - INFO - 📈 Trade #58 opened: SHORT 17.83 units @ 2316.05
+2026-07-21 17:07:03,391 - backtest_engine - INFO -    SL: 2323.284285714286 (7.23), TP: 2301.5814285714287 (14.47)     
+2026-07-21 17:07:03,391 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $258.01
+2026-07-21 17:07:03,391 - backtest_engine - INFO - 📉 Trade #58 closed: ❌ LOSS P&L: $-129.00 (-0.31%)
+2026-07-21 17:07:03,392 - backtest_engine - INFO - 📈 Trade #59 opened: SHORT 16.73 units @ 2344.59
+2026-07-21 17:07:03,392 - backtest_engine - INFO -    SL: 2352.144642857143 (7.55), TP: 2329.4807142857144 (15.11)     
+2026-07-21 17:07:03,392 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $252.85
+2026-07-21 17:07:03,392 - backtest_engine - INFO - 📉 Trade #59 closed: ❌ LOSS P&L: $-126.42 (-0.32%)
+2026-07-21 17:07:03,392 - backtest_engine - INFO - 📈 Trade #60 opened: LONG 13.76 units @ 2353.05
+2026-07-21 17:07:03,392 - backtest_engine - INFO -    SL: 2344.0457142857144 (9.00), TP: 2371.0585714285717 (18.01)    
+2026-07-21 17:07:03,393 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $247.79
+2026-07-21 17:07:03,393 - backtest_engine - INFO - 📉 Trade #60 closed: ✅ WIN P&L: $247.79 (0.77%)
+2026-07-21 17:07:03,393 - backtest_engine - INFO - 📈 Trade #61 opened: LONG 15.10 units @ 2372.58
+2026-07-21 17:07:03,393 - backtest_engine - INFO -    SL: 2364.0460714285714 (8.53), TP: 2389.647857142857 (17.07)     
+2026-07-21 17:07:03,393 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $257.70
+2026-07-21 17:07:03,393 - backtest_engine - INFO - 📉 Trade #61 closed: ❌ LOSS P&L: $-128.85 (-0.36%)
+2026-07-21 17:07:03,393 - backtest_engine - INFO - 📈 Trade #62 opened: SHORT 14.06 units @ 2373.28
+2026-07-21 17:07:03,393 - backtest_engine - INFO -    SL: 2382.261785714286 (8.98), TP: 2355.3164285714283 (17.96)     
+2026-07-21 17:07:03,393 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $252.55
+2026-07-21 17:07:03,393 - backtest_engine - INFO - 📉 Trade #62 closed: ❌ LOSS P&L: $-126.27 (-0.38%)
+2026-07-21 17:07:03,393 - backtest_engine - INFO - 📈 Trade #63 opened: LONG 11.79 units @ 2407.76
+2026-07-21 17:07:03,393 - backtest_engine - INFO -    SL: 2397.2632142857146 (10.50), TP: 2428.753571428572 (20.99)    
+2026-07-21 17:07:03,393 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $247.50
+2026-07-21 17:07:03,393 - backtest_engine - INFO - 📉 Trade #63 closed: ✅ WIN P&L: $247.50 (0.87%)
+2026-07-21 17:07:03,395 - backtest_engine - INFO - 📈 Trade #64 opened: LONG 10.27 units @ 2427.7
+2026-07-21 17:07:03,395 - backtest_engine - INFO -    SL: 2415.165357142857 (12.53), TP: 2452.7692857142856 (25.07)    
+2026-07-21 17:07:03,395 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $257.40
+2026-07-21 17:07:03,395 - backtest_engine - INFO - 📉 Trade #64 closed: ❌ LOSS P&L: $-128.70 (-0.52%)
+2026-07-21 17:07:03,395 - backtest_engine - INFO - 📈 Trade #65 opened: SHORT 11.53 units @ 2364.26
+2026-07-21 17:07:03,395 - backtest_engine - INFO -    SL: 2375.2035714285716 (10.94), TP: 2342.3728571428574 (21.89)   
+2026-07-21 17:07:03,396 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $252.25
+2026-07-21 17:07:03,396 - backtest_engine - INFO - 📉 Trade #65 closed: ✅ WIN P&L: $252.25 (0.93%)
+2026-07-21 17:07:03,396 - backtest_engine - INFO - 📈 Trade #66 opened: LONG 14.93 units @ 2336.93
+2026-07-21 17:07:03,396 - backtest_engine - INFO -    SL: 2328.1464285714283 (8.78), TP: 2354.497142857143 (17.57)     
+2026-07-21 17:07:03,396 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $262.34
+2026-07-21 17:07:03,396 - backtest_engine - INFO - 📉 Trade #66 closed: ✅ WIN P&L: $262.34 (0.75%)
+2026-07-21 17:07:03,396 - backtest_engine - INFO - 📈 Trade #67 opened: LONG 17.52 units @ 2354.4
+2026-07-21 17:07:03,397 - backtest_engine - INFO -    SL: 2346.612857142857 (7.79), TP: 2369.974285714286 (15.57)      
+2026-07-21 17:07:03,397 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $272.83
+2026-07-21 17:07:03,397 - backtest_engine - INFO - 📉 Trade #67 closed: ❌ LOSS P&L: $-136.42 (-0.33%)
+2026-07-21 17:07:03,397 - backtest_engine - INFO - 📈 Trade #68 opened: LONG 16.74 units @ 2354.95
+2026-07-21 17:07:03,397 - backtest_engine - INFO -    SL: 2346.9625 (7.99), TP: 2370.9249999999997 (15.97)
+2026-07-21 17:07:03,397 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $267.38
+2026-07-21 17:07:03,397 - backtest_engine - INFO - 📉 Trade #68 closed: ❌ LOSS P&L: $-133.69 (-0.34%)
+2026-07-21 17:07:03,398 - backtest_engine - INFO - 📈 Trade #69 opened: LONG 11.19 units @ 2344.06
+2026-07-21 17:07:03,398 - backtest_engine - INFO -    SL: 2332.3525 (11.71), TP: 2367.475 (23.41)
+2026-07-21 17:07:03,398 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $262.03
+2026-07-21 17:07:03,398 - backtest_engine - INFO - 📉 Trade #69 closed: ❌ LOSS P&L: $-131.01 (-0.50%)
+2026-07-21 17:07:03,398 - backtest_engine - INFO - 📈 Trade #70 opened: SHORT 14.70 units @ 2322.38
+2026-07-21 17:07:03,398 - backtest_engine - INFO -    SL: 2331.114285714286 (8.73), TP: 2304.9114285714286 (17.47)     
+2026-07-21 17:07:03,398 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $256.79
+2026-07-21 17:07:03,398 - backtest_engine - INFO - 📉 Trade #70 closed: ❌ LOSS P&L: $-128.39 (-0.38%)
+2026-07-21 17:07:03,399 - backtest_engine - INFO - 📈 Trade #71 opened: LONG 14.54 units @ 2332.6
+2026-07-21 17:07:03,399 - backtest_engine - INFO -    SL: 2323.9439285714284 (8.66), TP: 2349.912142857143 (17.31)     
+2026-07-21 17:07:03,399 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $251.65
+2026-07-21 17:07:03,399 - backtest_engine - INFO - 📉 Trade #71 closed: ✅ WIN P&L: $251.65 (0.74%)
+2026-07-21 17:07:03,399 - backtest_engine - INFO - 📈 Trade #72 opened: LONG 19.04 units @ 2344.42
+2026-07-21 17:07:03,399 - backtest_engine - INFO -    SL: 2337.548928571429 (6.87), TP: 2358.1621428571425 (13.74)     
+2026-07-21 17:07:03,400 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $261.72
+2026-07-21 17:07:03,400 - backtest_engine - INFO - 📉 Trade #72 closed: ❌ LOSS P&L: $-130.86 (-0.29%)
+2026-07-21 17:07:03,400 - backtest_engine - INFO - 📈 Trade #73 opened: SHORT 17.78 units @ 2327.97
+2026-07-21 17:07:03,400 - backtest_engine - INFO -    SL: 2335.182857142857 (7.21), TP: 2313.5442857142857 (14.43)     
+2026-07-21 17:07:03,400 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $256.48
+2026-07-21 17:07:03,400 - backtest_engine - INFO - 📉 Trade #73 closed: ❌ LOSS P&L: $-128.24 (-0.31%)
+2026-07-21 17:07:03,401 - backtest_engine - INFO - 📈 Trade #74 opened: LONG 15.96 units @ 2343.75
+2026-07-21 17:07:03,401 - backtest_engine - INFO -    SL: 2335.875 (7.88), TP: 2359.5 (15.75)
+2026-07-21 17:07:03,401 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $251.35
+2026-07-21 17:07:03,401 - backtest_engine - INFO - 📉 Trade #74 closed: ❌ LOSS P&L: $-125.68 (-0.34%)
+2026-07-21 17:07:03,401 - backtest_engine - INFO - 📈 Trade #75 opened: SHORT 9.30 units @ 2336.59
+2026-07-21 17:07:03,402 - backtest_engine - INFO -    SL: 2349.829642857143 (13.24), TP: 2310.1107142857145 (26.48)    
+2026-07-21 17:07:03,402 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $246.33
+2026-07-21 17:07:03,402 - backtest_engine - INFO - 📉 Trade #75 closed: ✅ WIN P&L: $246.33 (1.13%)
+2026-07-21 17:07:03,402 - backtest_engine - INFO - 📈 Trade #76 opened: SHORT 6.70 units @ 2305.0
+2026-07-21 17:07:03,402 - backtest_engine - INFO -    SL: 2324.1185714285716 (19.12), TP: 2266.7628571428572 (38.24)   
+2026-07-21 17:07:03,402 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $256.18
+2026-07-21 17:07:03,403 - backtest_engine - INFO - 📉 Trade #76 closed: ❌ LOSS P&L: $-128.09 (-0.83%)
+2026-07-21 17:07:03,403 - backtest_engine - INFO - 📈 Trade #77 opened: LONG 14.08 units @ 2329.78
+2026-07-21 17:07:03,403 - backtest_engine - INFO -    SL: 2320.8625 (8.92), TP: 2347.6150000000002 (17.84)
+2026-07-21 17:07:03,403 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $251.06
+2026-07-21 17:07:03,403 - backtest_engine - INFO - 📉 Trade #77 closed: ❌ LOSS P&L: $-125.53 (-0.38%)
+2026-07-21 17:07:03,403 - backtest_engine - INFO - 📈 Trade #78 opened: LONG 15.31 units @ 2331.91
+2026-07-21 17:07:03,403 - backtest_engine - INFO -    SL: 2323.8732142857143 (8.04), TP: 2347.9835714285714 (16.07)    
+2026-07-21 17:07:03,403 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $246.04
+2026-07-21 17:07:03,403 - backtest_engine - INFO - 📉 Trade #78 closed: ❌ LOSS P&L: $-123.02 (-0.34%)
+2026-07-21 17:07:03,405 - backtest_engine - INFO - 📈 Trade #79 opened: LONG 16.18 units @ 2324.47
+2026-07-21 17:07:03,405 - backtest_engine - INFO -    SL: 2317.020357142857 (7.45), TP: 2339.3692857142855 (14.90)     
+2026-07-21 17:07:03,405 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $241.12
+2026-07-21 17:07:03,405 - backtest_engine - INFO - 📉 Trade #79 closed: ❌ LOSS P&L: $-120.56 (-0.32%)
+2026-07-21 17:07:03,405 - backtest_engine - INFO - 📈 Trade #80 opened: LONG 12.81 units @ 2326.82
+2026-07-21 17:07:03,405 - backtest_engine - INFO -    SL: 2317.5950000000003 (9.22), TP: 2345.2700000000004 (18.45)    
+2026-07-21 17:07:03,405 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $236.29
+2026-07-21 17:07:03,406 - backtest_engine - INFO - 📉 Trade #80 closed: ✅ WIN P&L: $236.29 (0.79%)
+2026-07-21 17:07:03,406 - backtest_engine - INFO - 📈 Trade #81 opened: LONG 20.89 units @ 2344.05
+2026-07-21 17:07:03,406 - backtest_engine - INFO -    SL: 2338.1667857142857 (5.88), TP: 2355.816428571429 (11.77)     
+2026-07-21 17:07:03,406 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $245.74
+2026-07-21 17:07:03,406 - backtest_engine - INFO - 📉 Trade #81 closed: ❌ LOSS P&L: $-122.87 (-0.25%)
+2026-07-21 17:07:03,406 - backtest_engine - INFO - 📈 Trade #82 opened: LONG 10.95 units @ 2353.64
+2026-07-21 17:07:03,406 - backtest_engine - INFO -    SL: 2342.6482142857144 (10.99), TP: 2375.6235714285713 (21.98)   
+2026-07-21 17:07:03,406 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $240.83
+2026-07-21 17:07:03,407 - backtest_engine - INFO - 📉 Trade #82 closed: ❌ LOSS P&L: $-120.41 (-0.47%)
+2026-07-21 17:07:03,407 - backtest_engine - INFO - 📈 Trade #83 opened: SHORT 12.91 units @ 2324.76
+2026-07-21 17:07:03,407 - backtest_engine - INFO -    SL: 2333.903571428572 (9.14), TP: 2306.4728571428573 (18.29)     
+2026-07-21 17:07:03,407 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $236.01
+2026-07-21 17:07:03,407 - backtest_engine - INFO - 📉 Trade #83 closed: ✅ WIN P&L: $236.01 (0.79%)
+2026-07-21 17:07:03,408 - backtest_engine - INFO - 📈 Trade #84 opened: SHORT 13.92 units @ 2313.0
+2026-07-21 17:07:03,408 - backtest_engine - INFO -    SL: 2321.815714285714 (8.82), TP: 2295.3685714285716 (17.63)     
+2026-07-21 17:07:03,408 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $245.45
+2026-07-21 17:07:03,408 - backtest_engine - INFO - 📉 Trade #84 closed: ✅ WIN P&L: $245.45 (0.76%)
+2026-07-21 17:07:03,408 - backtest_engine - INFO - 📈 Trade #85 opened: LONG 18.30 units @ 2335.45
+2026-07-21 17:07:03,409 - backtest_engine - INFO -    SL: 2328.4771428571426 (6.97), TP: 2349.395714285714 (13.95)     
+2026-07-21 17:07:03,409 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $255.27
+2026-07-21 17:07:03,409 - backtest_engine - INFO - 📉 Trade #85 closed: ❌ LOSS P&L: $-127.64 (-0.30%)
+2026-07-21 17:07:03,409 - backtest_engine - INFO - 📈 Trade #86 opened: LONG 15.24 units @ 2330.45
+2026-07-21 17:07:03,409 - backtest_engine - INFO -    SL: 2322.2417857142855 (8.21), TP: 2346.8664285714285 (16.42)    
+2026-07-21 17:07:03,409 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $250.17
+2026-07-21 17:07:03,409 - backtest_engine - INFO - 📉 Trade #86 closed: ❌ LOSS P&L: $-125.08 (-0.35%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #87 opened: LONG 16.35 units @ 2327.41
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2319.9132142857143 (7.50), TP: 2342.403571428571 (14.99)     
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $245.16
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #87 closed: ❌ LOSS P&L: $-122.58 (-0.32%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #88 opened: SHORT 23.93 units @ 2330.84
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2335.8607142857145 (5.02), TP: 2320.7985714285714 (10.04)    
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $240.26
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #88 closed: ✅ WIN P&L: $240.26 (0.43%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #89 opened: SHORT 17.67 units @ 2327.45
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2334.520357142857 (7.07), TP: 2313.3092857142856 (14.14)     
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $249.87
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #89 closed: ❌ LOSS P&L: $-124.94 (-0.30%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #90 opened: LONG 20.63 units @ 2344.63
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2338.695357142857 (5.93), TP: 2356.4992857142856 (11.87)     
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $244.87
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #90 closed: ✅ WIN P&L: $244.87 (0.51%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #91 opened: LONG 15.19 units @ 2354.5
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2346.118214285714 (8.38), TP: 2371.263571428571 (16.76)      
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $254.67
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #91 closed: ✅ WIN P&L: $254.67 (0.71%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #92 opened: SHORT 21.69 units @ 2360.13
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2366.235 (6.11), TP: 2347.92 (12.21)
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $264.85
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #92 closed: ❌ LOSS P&L: $-132.43 (-0.26%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #93 opened: LONG 23.94 units @ 2377.77
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2372.3496428571425 (5.42), TP: 2388.6107142857145 (10.84)    
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $259.56
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #93 closed: ❌ LOSS P&L: $-129.78 (-0.23%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #94 opened: LONG 25.73 units @ 2381.82
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2376.8775 (4.94), TP: 2391.7050000000004 (9.89)
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $254.37
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #94 closed: ✅ WIN P&L: $254.37 (0.42%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #95 opened: LONG 18.51 units @ 2414.82
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2407.6757142857145 (7.14), TP: 2429.1085714285714 (14.29)    
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $264.54
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📉 Trade #95 closed: ✅ WIN P&L: $264.54 (0.59%)
+2026-07-21 17:07:03,410 - backtest_engine - INFO - 📈 Trade #96 opened: LONG 14.20 units @ 2430.2
+2026-07-21 17:07:03,410 - backtest_engine - INFO -    SL: 2420.5099999999998 (9.69), TP: 2449.58 (19.38)
+2026-07-21 17:07:03,415 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $275.12
+2026-07-21 17:07:03,415 - backtest_engine - INFO - 📉 Trade #96 closed: ❌ LOSS P&L: $-137.56 (-0.40%)
+2026-07-21 17:07:03,415 - backtest_engine - INFO - 📈 Trade #97 opened: LONG 16.34 units @ 2432.54
+2026-07-21 17:07:03,415 - backtest_engine - INFO -    SL: 2424.2910714285713 (8.25), TP: 2449.0378571428573 (16.50)    
+2026-07-21 17:07:03,415 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $269.62
+2026-07-21 17:07:03,415 - backtest_engine - INFO - 📉 Trade #97 closed: ✅ WIN P&L: $269.62 (0.68%)
+2026-07-21 17:07:03,415 - backtest_engine - INFO - 📈 Trade #98 opened: SHORT 17.58 units @ 2465.08
+2026-07-21 17:07:03,416 - backtest_engine - INFO -    SL: 2473.0567857142855 (7.98), TP: 2449.1264285714287 (15.95)    
+2026-07-21 17:07:03,416 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $280.40
+2026-07-21 17:07:03,416 - backtest_engine - INFO - 📉 Trade #98 closed: ✅ WIN P&L: $280.40 (0.65%)
+2026-07-21 17:07:03,416 - backtest_engine - INFO - 📈 Trade #99 opened: SHORT 13.42 units @ 2418.19
+2026-07-21 17:07:03,416 - backtest_engine - INFO -    SL: 2429.054285714286 (10.86), TP: 2396.4614285714288 (21.73)    
+2026-07-21 17:07:03,416 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $291.62
+2026-07-21 17:07:03,417 - backtest_engine - INFO - 📉 Trade #99 closed: ✅ WIN P&L: $291.62 (0.90%)
+2026-07-21 17:07:03,417 - backtest_engine - INFO - 📈 Trade #100 opened: SHORT 12.49 units @ 2403.81
+2026-07-21 17:07:03,417 - backtest_engine - INFO -    SL: 2415.9525 (12.14), TP: 2379.525 (24.28)
+2026-07-21 17:07:03,417 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $303.29
+2026-07-21 17:07:03,418 - backtest_engine - INFO - 📉 Trade #100 closed: ❌ LOSS P&L: $-151.64 (-0.51%)
+2026-07-21 17:07:03,418 - backtest_engine - INFO - 📈 Trade #101 opened: LONG 24.12 units @ 2417.49
+2026-07-21 17:07:03,418 - backtest_engine - INFO -    SL: 2411.3292857142856 (6.16), TP: 2429.811428571428 (12.32)     
+2026-07-21 17:07:03,418 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $297.22
+2026-07-21 17:07:03,418 - backtest_engine - INFO - 📉 Trade #101 closed: ❌ LOSS P&L: $-148.61 (-0.25%)
+2026-07-21 17:07:03,418 - backtest_engine - INFO - 📈 Trade #102 opened: SHORT 10.77 units @ 2374.01
+2026-07-21 17:07:03,419 - backtest_engine - INFO -    SL: 2387.536785714286 (13.53), TP: 2346.9564285714287 (27.05)    
+2026-07-21 17:07:03,419 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $291.28
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #102 closed: ❌ LOSS P&L: $-145.64 (-0.57%)
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📈 Trade #103 opened: LONG 13.17 units @ 2381.86
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    SL: 2371.019285714286 (10.84), TP: 2403.5414285714287 (21.68)    
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $285.45
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #103 closed: ❌ LOSS P&L: $-142.73 (-0.46%)
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📈 Trade #104 opened: LONG 14.03 units @ 2421.35
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    SL: 2411.3792857142857 (9.97), TP: 2441.2914285714287 (19.94)    
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $279.74
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #104 closed: ✅ WIN P&L: $279.74 (0.82%)
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📈 Trade #105 opened: LONG 11.34 units @ 2448.56
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    SL: 2435.7360714285714 (12.82), TP: 2474.2078571428574 (25.65)   
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $290.93
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #105 closed: ❌ LOSS P&L: $-145.47 (-0.52%)
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📈 Trade #106 opened: LONG 13.76 units @ 2465.55
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    SL: 2455.191428571429 (10.36), TP: 2486.267142857143 (20.72)     
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $285.11
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #106 closed: ❌ LOSS P&L: $-142.56 (-0.42%)
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📈 Trade #107 opened: SHORT 11.66 units @ 2401.56
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    SL: 2413.5407142857143 (11.98), TP: 2377.598571428571 (23.96)    
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $279.41
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #107 closed: ❌ LOSS P&L: $-139.70 (-0.50%)
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📈 Trade #108 opened: SHORT 9.55 units @ 2387.59
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    SL: 2401.9310714285716 (14.34), TP: 2358.907857142857 (28.68)    
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $273.82
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #108 closed: ❌ LOSS P&L: $-136.91 (-0.60%)
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📈 Trade #109 opened: LONG 15.06 units @ 2408.04
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    SL: 2399.1321428571428 (8.91), TP: 2425.855714285715 (17.82)     
+2026-07-21 17:07:03,420 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $268.35
+2026-07-21 17:07:03,420 - backtest_engine - INFO - 📉 Trade #109 closed: ✅ WIN P&L: $268.35 (0.74%)
+2026-07-21 17:07:03,425 - backtest_engine - INFO - 📈 Trade #110 opened: LONG 15.39 units @ 2426.66
+2026-07-21 17:07:03,425 - backtest_engine - INFO -    SL: 2417.595714285714 (9.06), TP: 2444.7885714285712 (18.13)     
+2026-07-21 17:07:03,425 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $279.08
+2026-07-21 17:07:03,425 - backtest_engine - INFO - 📉 Trade #110 closed: ✅ WIN P&L: $279.08 (0.75%)
+2026-07-21 17:07:03,425 - backtest_engine - INFO - 📈 Trade #111 opened: LONG 22.22 units @ 2444.4
+2026-07-21 17:07:03,425 - backtest_engine - INFO -    SL: 2437.8685714285716 (6.53), TP: 2457.462857142857 (13.06)     
+2026-07-21 17:07:03,425 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $290.24
+2026-07-21 17:07:03,425 - backtest_engine - INFO - 📉 Trade #111 closed: ✅ WIN P&L: $290.24 (0.53%)
+2026-07-21 17:07:03,425 - backtest_engine - INFO - 📈 Trade #112 opened: LONG 16.21 units @ 2468.75
+2026-07-21 17:07:03,426 - backtest_engine - INFO -    SL: 2459.4392857142857 (9.31), TP: 2487.3714285714286 (18.62)    
+2026-07-21 17:07:03,426 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $301.85
+2026-07-21 17:07:03,426 - backtest_engine - INFO - 📉 Trade #112 closed: ❌ LOSS P&L: $-150.93 (-0.38%)
+2026-07-21 17:07:03,426 - backtest_engine - INFO - 📈 Trade #113 opened: SHORT 14.46 units @ 2494.76
+2026-07-21 17:07:03,427 - backtest_engine - INFO -    SL: 2504.986785714286 (10.23), TP: 2474.306428571429 (20.45)     
+2026-07-21 17:07:03,427 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $295.81
+2026-07-21 17:07:03,427 - backtest_engine - INFO - 📉 Trade #113 closed: ❌ LOSS P&L: $-147.91 (-0.41%)
+2026-07-21 17:07:03,427 - backtest_engine - INFO - 📈 Trade #114 opened: LONG 17.19 units @ 2526.75
+2026-07-21 17:07:03,427 - backtest_engine - INFO -    SL: 2518.3167857142857 (8.43), TP: 2543.6164285714285 (16.87)    
+2026-07-21 17:07:03,427 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $289.90
+2026-07-21 17:07:03,427 - backtest_engine - INFO - 📉 Trade #114 closed: ❌ LOSS P&L: $-144.95 (-0.33%)
+2026-07-21 17:07:03,427 - backtest_engine - INFO - 📈 Trade #115 opened: SHORT 13.72 units @ 2501.48
+2026-07-21 17:07:03,427 - backtest_engine - INFO -    SL: 2511.8364285714288 (10.36), TP: 2480.767142857143 (20.71)    
+2026-07-21 17:07:03,428 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $284.10
+2026-07-21 17:07:03,428 - backtest_engine - INFO - 📉 Trade #115 closed: ❌ LOSS P&L: $-142.05 (-0.41%)
+2026-07-21 17:07:03,428 - backtest_engine - INFO - 📈 Trade #116 opened: SHORT 16.56 units @ 2500.63
+2026-07-21 17:07:03,428 - backtest_engine - INFO -    SL: 2509.0385714285717 (8.41), TP: 2483.812857142857 (16.82)     
+2026-07-21 17:07:03,428 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $278.42
+2026-07-21 17:07:03,428 - backtest_engine - INFO - 📉 Trade #116 closed: ✅ WIN P&L: $278.42 (0.67%)
+2026-07-21 17:07:03,428 - backtest_engine - INFO - 📈 Trade #117 opened: LONG 20.86 units @ 2498.46
+2026-07-21 17:07:03,428 - backtest_engine - INFO -    SL: 2491.5192857142856 (6.94), TP: 2512.341428571429 (13.88)     
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $289.56
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📉 Trade #117 closed: ✅ WIN P&L: $289.56 (0.56%)
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📈 Trade #118 opened: LONG 16.39 units @ 2509.72
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    SL: 2500.535714285714 (9.18), TP: 2528.0885714285714 (18.37)     
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $301.14
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📉 Trade #118 closed: ✅ WIN P&L: $301.14 (0.73%)
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📈 Trade #119 opened: SHORT 22.28 units @ 2508.52
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    SL: 2515.5496428571428 (7.03), TP: 2494.4607142857144 (14.06)    
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $313.18
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📉 Trade #119 closed: ✅ WIN P&L: $313.18 (0.56%)
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📈 Trade #120 opened: LONG 22.88 units @ 2516.9
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    SL: 2509.7835714285716 (7.12), TP: 2531.132857142857 (14.23)     
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $325.71
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📉 Trade #120 closed: ❌ LOSS P&L: $-162.86 (-0.28%)
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📈 Trade #121 opened: SHORT 13.01 units @ 2478.33
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    SL: 2490.595714285714 (12.27), TP: 2453.7985714285714 (24.53)    
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $319.20
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📉 Trade #121 closed: ❌ LOSS P&L: $-159.60 (-0.49%)
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📈 Trade #122 opened: SHORT 21.04 units @ 2481.64
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    SL: 2489.074642857143 (7.43), TP: 2466.7707142857143 (14.87)     
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $312.81
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📉 Trade #122 closed: ❌ LOSS P&L: $-156.41 (-0.30%)
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📈 Trade #123 opened: LONG 24.49 units @ 2515.15
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    SL: 2508.8917857142856 (6.26), TP: 2527.6664285714287 (12.52)    
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $306.56
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📉 Trade #123 closed: ❌ LOSS P&L: $-153.28 (-0.25%)
+2026-07-21 17:07:03,429 - backtest_engine - INFO - 📈 Trade #124 opened: LONG 33.09 units @ 2516.27
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    SL: 2511.730357142857 (4.54), TP: 2525.349285714286 (9.08)       
+2026-07-21 17:07:03,429 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $300.42
+2026-07-21 17:07:03,434 - backtest_engine - INFO - 📉 Trade #124 closed: ✅ WIN P&L: $300.42 (0.36%)
+2026-07-21 17:07:03,434 - backtest_engine - INFO - 📈 Trade #125 opened: LONG 18.81 units @ 2499.8
+2026-07-21 17:07:03,434 - backtest_engine - INFO -    SL: 2491.4964285714286 (8.30), TP: 2516.407142857143 (16.61)     
+2026-07-21 17:07:03,434 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $312.44
+2026-07-21 17:07:03,434 - backtest_engine - INFO - 📉 Trade #125 closed: ✅ WIN P&L: $312.44 (0.66%)
+2026-07-21 17:07:03,434 - backtest_engine - INFO - 📈 Trade #126 opened: LONG 20.66 units @ 2512.7
+2026-07-21 17:07:03,435 - backtest_engine - INFO -    SL: 2504.8367857142857 (7.86), TP: 2528.4264285714285 (15.73)    
+2026-07-21 17:07:03,435 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $324.94
+2026-07-21 17:07:03,435 - backtest_engine - INFO - 📉 Trade #126 closed: ✅ WIN P&L: $324.94 (0.63%)
+2026-07-21 17:07:03,435 - backtest_engine - INFO - 📈 Trade #127 opened: SHORT 17.45 units @ 2509.48
+2026-07-21 17:07:03,435 - backtest_engine - INFO -    SL: 2519.1646428571426 (9.68), TP: 2490.1107142857145 (19.37)    
+2026-07-21 17:07:03,435 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $337.94
+2026-07-21 17:07:03,436 - backtest_engine - INFO - 📉 Trade #127 closed: ❌ LOSS P&L: $-168.97 (-0.39%)
+2026-07-21 17:07:03,437 - backtest_engine - INFO - 📈 Trade #128 opened: SHORT 18.35 units @ 2577.75
+2026-07-21 17:07:03,437 - backtest_engine - INFO -    SL: 2586.7746428571427 (9.02), TP: 2559.700714285714 (18.05)     
+2026-07-21 17:07:03,437 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $331.18
+2026-07-21 17:07:03,437 - backtest_engine - INFO - 📉 Trade #128 closed: ❌ LOSS P&L: $-165.59 (-0.35%)
+2026-07-21 17:07:03,438 - backtest_engine - INFO - 📈 Trade #129 opened: LONG 21.71 units @ 2613.68
+2026-07-21 17:07:03,438 - backtest_engine - INFO -    SL: 2606.2067857142856 (7.47), TP: 2628.6264285714283 (14.95)    
+2026-07-21 17:07:03,438 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $324.55
+2026-07-21 17:07:03,438 - backtest_engine - INFO - 📉 Trade #129 closed: ❌ LOSS P&L: $-162.28 (-0.29%)
+2026-07-21 17:07:03,438 - backtest_engine - INFO - 📈 Trade #130 opened: LONG 17.19 units @ 2630.42
+2026-07-21 17:07:03,438 - backtest_engine - INFO -    SL: 2621.1692857142857 (9.25), TP: 2648.9214285714284 (18.50)    
+2026-07-21 17:07:03,438 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $318.06
+2026-07-21 17:07:03,438 - backtest_engine - INFO - 📉 Trade #130 closed: ✅ WIN P&L: $318.06 (0.70%)
+2026-07-21 17:07:03,439 - backtest_engine - INFO - 📈 Trade #131 opened: LONG 16.80 units @ 2658.95
+2026-07-21 17:07:03,439 - backtest_engine - INFO -    SL: 2649.1025 (9.85), TP: 2678.645 (19.70)
+2026-07-21 17:07:03,439 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $330.79
+2026-07-21 17:07:03,439 - backtest_engine - INFO - 📉 Trade #131 closed: ✅ WIN P&L: $330.79 (0.74%)
+2026-07-21 17:07:03,440 - backtest_engine - INFO - 📈 Trade #132 opened: SHORT 14.75 units @ 2635.66
+2026-07-21 17:07:03,440 - backtest_engine - INFO -    SL: 2647.3235714285715 (11.66), TP: 2612.3328571428565 (23.33)   
+2026-07-21 17:07:03,440 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $344.02
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📉 Trade #132 closed: ❌ LOSS P&L: $-172.01 (-0.44%)
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📈 Trade #133 opened: LONG 30.26 units @ 2650.17
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    SL: 2644.599642857143 (5.57), TP: 2661.3107142857143 (11.14)     
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $337.14
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📉 Trade #133 closed: ✅ WIN P&L: $337.14 (0.42%)
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📈 Trade #134 opened: LONG 15.97 units @ 2666.42
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    SL: 2655.445357142857 (10.97), TP: 2688.369285714286 (21.95)     
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $350.62
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📉 Trade #134 closed: ❌ LOSS P&L: $-175.31 (-0.41%)
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📈 Trade #135 opened: SHORT 21.07 units @ 2649.57
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    SL: 2657.724642857143 (8.15), TP: 2633.260714285714 (16.31)      
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $343.61
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📉 Trade #135 closed: ❌ LOSS P&L: $-171.81 (-0.31%)
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📈 Trade #136 opened: SHORT 15.84 units @ 2637.91
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    SL: 2648.5396428571426 (10.63), TP: 2616.6507142857145 (21.26)   
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $336.74
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📉 Trade #136 closed: ❌ LOSS P&L: $-168.37 (-0.40%)
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📈 Trade #137 opened: SHORT 17.27 units @ 2609.84
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    SL: 2619.3960714285713 (9.56), TP: 2590.7278571428574 (19.11)    
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $330.00
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📉 Trade #137 closed: ❌ LOSS P&L: $-165.00 (-0.37%)
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📈 Trade #138 opened: LONG 19.24 units @ 2639.49
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    SL: 2631.085714285714 (8.40), TP: 2656.2985714285714 (16.81)     
+2026-07-21 17:07:03,441 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $323.40
+2026-07-21 17:07:03,441 - backtest_engine - INFO - 📉 Trade #138 closed: ✅ WIN P&L: $323.40 (0.64%)
+2026-07-21 17:07:03,445 - backtest_engine - INFO - 📈 Trade #139 opened: SHORT 20.36 units @ 2651.35
+2026-07-21 17:07:03,445 - backtest_engine - INFO -    SL: 2659.6085714285714 (8.26), TP: 2634.8328571428574 (16.52)    
+2026-07-21 17:07:03,445 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $336.34
+2026-07-21 17:07:03,445 - backtest_engine - INFO - 📉 Trade #139 closed: ❌ LOSS P&L: $-168.17 (-0.31%)
+2026-07-21 17:07:03,445 - backtest_engine - INFO - 📈 Trade #140 opened: SHORT 15.90 units @ 2646.73
+2026-07-21 17:07:03,445 - backtest_engine - INFO -    SL: 2657.095 (10.36), TP: 2626.0 (20.73)
+2026-07-21 17:07:03,445 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $329.61
+2026-07-21 17:07:03,445 - backtest_engine - INFO - 📉 Trade #140 closed: ❌ LOSS P&L: $-164.81 (-0.39%)
+2026-07-21 17:07:03,445 - backtest_engine - INFO - 📈 Trade #141 opened: LONG 19.63 units @ 2648.23
+2026-07-21 17:07:03,445 - backtest_engine - INFO -    SL: 2640.000357142857 (8.23), TP: 2664.6892857142857 (16.46)     
+2026-07-21 17:07:03,446 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $323.02
+2026-07-21 17:07:03,446 - backtest_engine - INFO - 📉 Trade #141 closed: ✅ WIN P&L: $323.02 (0.62%)
+2026-07-21 17:07:03,446 - backtest_engine - INFO - 📈 Trade #142 opened: LONG 15.19 units @ 2661.81
+2026-07-21 17:07:03,446 - backtest_engine - INFO -    SL: 2650.7539285714283 (11.06), TP: 2683.922142857143 (22.11)    
+2026-07-21 17:07:03,446 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $335.94
+2026-07-21 17:07:03,446 - backtest_engine - INFO - 📉 Trade #142 closed: ✅ WIN P&L: $335.94 (0.83%)
+2026-07-21 17:07:03,446 - backtest_engine - INFO - 📈 Trade #143 opened: LONG 19.52 units @ 2675.02
+2026-07-21 17:07:03,446 - backtest_engine - INFO -    SL: 2666.0725 (8.95), TP: 2692.915 (17.89)
+2026-07-21 17:07:03,446 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $349.38
+2026-07-21 17:07:03,446 - backtest_engine - INFO - 📉 Trade #143 closed: ✅ WIN P&L: $349.38 (0.67%)
+2026-07-21 17:07:03,447 - backtest_engine - INFO - 📈 Trade #144 opened: LONG 23.17 units @ 2734.45
+2026-07-21 17:07:03,447 - backtest_engine - INFO -    SL: 2726.610357142857 (7.84), TP: 2750.1292857142853 (15.68)     
+2026-07-21 17:07:03,447 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $363.35
+2026-07-21 17:07:03,447 - backtest_engine - INFO - 📉 Trade #144 closed: ❌ LOSS P&L: $-181.68 (-0.29%)
+2026-07-21 17:07:03,447 - backtest_engine - INFO - 📈 Trade #145 opened: LONG 24.24 units @ 2735.06
+2026-07-21 17:07:03,447 - backtest_engine - INFO -    SL: 2727.7142857142853 (7.35), TP: 2749.7514285714287 (14.69)    
+2026-07-21 17:07:03,447 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $356.09
+2026-07-21 17:07:03,448 - backtest_engine - INFO - 📉 Trade #145 closed: ✅ WIN P&L: $356.09 (0.54%)
+2026-07-21 17:07:03,448 - backtest_engine - INFO - 📈 Trade #146 opened: SHORT 15.80 units @ 2721.81
+2026-07-21 17:07:03,448 - backtest_engine - INFO -    SL: 2733.5314285714285 (11.72), TP: 2698.367142857143 (23.44)    
+2026-07-21 17:07:03,448 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $370.33
+2026-07-21 17:07:03,448 - backtest_engine - INFO - 📉 Trade #146 closed: ❌ LOSS P&L: $-185.17 (-0.43%)
+2026-07-21 17:07:03,448 - backtest_engine - INFO - 📈 Trade #147 opened: LONG 26.17 units @ 2739.03
+2026-07-21 17:07:03,449 - backtest_engine - INFO -    SL: 2732.096785714286 (6.93), TP: 2752.8964285714287 (13.87)     
+2026-07-21 17:07:03,449 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $362.92
+2026-07-21 17:07:03,449 - backtest_engine - INFO - 📉 Trade #147 closed: ❌ LOSS P&L: $-181.46 (-0.25%)
+2026-07-21 17:07:03,449 - backtest_engine - INFO - 📈 Trade #148 opened: LONG 22.25 units @ 2733.62
+2026-07-21 17:07:03,449 - backtest_engine - INFO -    SL: 2725.6282142857144 (7.99), TP: 2749.6035714285713 (15.98)    
+2026-07-21 17:07:03,449 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $355.67
+2026-07-21 17:07:03,449 - backtest_engine - INFO - 📉 Trade #148 closed: ❌ LOSS P&L: $-177.83 (-0.29%)
+2026-07-21 17:07:03,450 - backtest_engine - INFO - 📈 Trade #149 opened: LONG 18.05 units @ 2737.08
+2026-07-21 17:07:03,450 - backtest_engine - INFO -    SL: 2727.4264285714285 (9.65), TP: 2756.387142857143 (19.31)     
+2026-07-21 17:07:03,450 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $348.55
+2026-07-21 17:07:03,450 - backtest_engine - INFO - 📉 Trade #149 closed: ❌ LOSS P&L: $-174.28 (-0.35%)
+2026-07-21 17:07:03,453 - backtest_engine - INFO - 📈 Trade #150 opened: SHORT 21.63 units @ 2773.61
+2026-07-21 17:07:03,453 - backtest_engine - INFO -    SL: 2781.505357142857 (7.90), TP: 2757.819285714286 (15.79)      
+2026-07-21 17:07:03,453 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $341.58
+2026-07-21 17:07:03,453 - backtest_engine - INFO - 📉 Trade #150 closed: ✅ WIN P&L: $341.58 (0.57%)
+2026-07-21 17:07:03,453 - backtest_engine - INFO - 📈 Trade #151 opened: SHORT 14.87 units @ 2740.6
+2026-07-21 17:07:03,453 - backtest_engine - INFO -    SL: 2752.5474999999997 (11.95), TP: 2716.705 (23.89)
+2026-07-21 17:07:03,453 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $355.24
+2026-07-21 17:07:03,453 - backtest_engine - INFO - 📉 Trade #151 closed: ❌ LOSS P&L: $-177.62 (-0.44%)
+2026-07-21 17:07:03,453 - backtest_engine - INFO - 📈 Trade #152 opened: LONG 17.99 units @ 2743.36
+2026-07-21 17:07:03,453 - backtest_engine - INFO -    SL: 2733.6860714285717 (9.67), TP: 2762.7078571428574 (19.35)    
+2026-07-21 17:07:03,453 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $348.14
+2026-07-21 17:07:03,453 - backtest_engine - INFO - 📉 Trade #152 closed: ❌ LOSS P&L: $-174.07 (-0.35%)
+2026-07-21 17:07:03,453 - backtest_engine - INFO - 📈 Trade #153 opened: LONG 17.89 units @ 2744.65
+2026-07-21 17:07:03,453 - backtest_engine - INFO -    SL: 2735.114285714286 (9.54), TP: 2763.7214285714285 (19.07)     
+2026-07-21 17:07:03,455 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $341.18
+2026-07-21 17:07:03,455 - backtest_engine - INFO - 📉 Trade #153 closed: ❌ LOSS P&L: $-170.59 (-0.35%)
+2026-07-21 17:07:03,456 - backtest_engine - INFO - 📈 Trade #154 opened: SHORT 6.19 units @ 2659.71
+2026-07-21 17:07:03,456 - backtest_engine - INFO -    SL: 2686.7132142857145 (27.00), TP: 2605.7035714285716 (54.01)   
+2026-07-21 17:07:03,456 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $334.35
+2026-07-21 17:07:03,456 - backtest_engine - INFO - 📉 Trade #154 closed: ❌ LOSS P&L: $-167.18 (-1.02%)
+2026-07-21 17:07:03,456 - backtest_engine - INFO - 📈 Trade #155 opened: SHORT 12.24 units @ 2615.15
+2026-07-21 17:07:03,457 - backtest_engine - INFO -    SL: 2628.5310714285715 (13.38), TP: 2588.3878571428572 (26.76)   
+2026-07-21 17:07:03,457 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $327.67
+2026-07-21 17:07:03,457 - backtest_engine - INFO - 📉 Trade #155 closed: ✅ WIN P&L: $327.67 (1.02%)
+2026-07-21 17:07:03,457 - backtest_engine - INFO - 📈 Trade #156 opened: LONG 17.36 units @ 2565.28
+2026-07-21 17:07:03,457 - backtest_engine - INFO -    SL: 2555.464642857143 (9.82), TP: 2584.9107142857147 (19.63)     
+2026-07-21 17:07:03,457 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $340.77
+2026-07-21 17:07:03,458 - backtest_engine - INFO - 📉 Trade #156 closed: ✅ WIN P&L: $340.77 (0.77%)
+2026-07-21 17:07:03,458 - backtest_engine - INFO - 📈 Trade #157 opened: LONG 16.30 units @ 2611.52
+2026-07-21 17:07:03,458 - backtest_engine - INFO -    SL: 2600.6471428571426 (10.87), TP: 2633.2657142857142 (21.75)   
+2026-07-21 17:07:03,458 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $354.40
+2026-07-21 17:07:03,458 - backtest_engine - INFO - 📉 Trade #157 closed: ✅ WIN P&L: $354.40 (0.83%)
+2026-07-21 17:07:03,458 - backtest_engine - INFO - 📈 Trade #158 opened: LONG 18.66 units @ 2635.22
+2026-07-21 17:07:03,458 - backtest_engine - INFO -    SL: 2625.3424999999997 (9.88), TP: 2654.9749999999995 (19.75)    
+2026-07-21 17:07:03,458 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $368.58
+2026-07-21 17:07:03,458 - backtest_engine - INFO - 📉 Trade #158 closed: ❌ LOSS P&L: $-184.29 (-0.37%)
+2026-07-21 17:07:03,459 - backtest_engine - INFO - 📈 Trade #159 opened: LONG 22.38 units @ 2668.81
+2026-07-21 17:07:03,459 - backtest_engine - INFO -    SL: 2660.7389285714285 (8.07), TP: 2684.9521428571425 (16.14)    
+2026-07-21 17:07:03,459 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $361.21
+2026-07-21 17:07:03,459 - backtest_engine - INFO - 📉 Trade #159 closed: ❌ LOSS P&L: $-180.60 (-0.30%)
+2026-07-21 17:07:03,459 - backtest_engine - INFO - 📈 Trade #160 opened: LONG 19.50 units @ 2697.25
+2026-07-21 17:07:03,459 - backtest_engine - INFO -    SL: 2688.1717857142858 (9.08), TP: 2715.4064285714285 (18.16)    
+2026-07-21 17:07:03,459 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $353.98
+2026-07-21 17:07:03,459 - backtest_engine - INFO - 📉 Trade #160 closed: ❌ LOSS P&L: $-176.99 (-0.34%)
+2026-07-21 17:07:03,460 - backtest_engine - INFO - 📈 Trade #161 opened: LONG 12.22 units @ 2629.9
+2026-07-21 17:07:03,460 - backtest_engine - INFO -    SL: 2615.7003571428572 (14.20), TP: 2658.299285714286 (28.40)    
+2026-07-21 17:07:03,460 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $346.90
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📉 Trade #161 closed: ✅ WIN P&L: $346.90 (1.08%)
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📈 Trade #162 opened: LONG 14.33 units @ 2645.56
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    SL: 2632.9760714285712 (12.58), TP: 2670.7278571428574 (25.17)   
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $360.78
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📉 Trade #162 closed: ❌ LOSS P&L: $-180.39 (-0.48%)
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📈 Trade #163 opened: SHORT 18.95 units @ 2648.4
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    SL: 2657.7310714285713 (9.33), TP: 2629.737857142857 (18.66)     
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $353.56
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📉 Trade #163 closed: ✅ WIN P&L: $353.56 (0.70%)
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📈 Trade #164 opened: SHORT 13.75 units @ 2635.54
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    SL: 2648.908214285714 (13.37), TP: 2608.8035714285716 (26.74)    
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $367.71
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📉 Trade #164 closed: ❌ LOSS P&L: $-183.85 (-0.51%)
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📈 Trade #165 opened: LONG 16.18 units @ 2668.32
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    SL: 2657.186785714286 (11.13), TP: 2690.5864285714283 (22.27)    
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $360.35
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📉 Trade #165 closed: ❌ LOSS P&L: $-180.18 (-0.42%)
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📈 Trade #166 opened: LONG 11.92 units @ 2715.22
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    SL: 2700.4096428571424 (14.81), TP: 2744.840714285714 (29.62)    
+2026-07-21 17:07:03,461 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $353.15
+2026-07-21 17:07:03,461 - backtest_engine - INFO - 📉 Trade #166 closed: ❌ LOSS P&L: $-176.57 (-0.55%)
+2026-07-21 17:07:03,465 - backtest_engine - INFO - 📈 Trade #167 opened: SHORT 15.68 units @ 2660.14
+2026-07-21 17:07:03,465 - backtest_engine - INFO -    SL: 2671.1746428571428 (11.03), TP: 2638.070714285714 (22.07)    
+2026-07-21 17:07:03,465 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $346.08
+2026-07-21 17:07:03,465 - backtest_engine - INFO - 📉 Trade #167 closed: ✅ WIN P&L: $346.08 (0.83%)
+2026-07-21 17:07:03,465 - backtest_engine - INFO - 📈 Trade #168 opened: SHORT 17.08 units @ 2636.62
+2026-07-21 17:07:03,465 - backtest_engine - INFO -    SL: 2647.1575 (10.54), TP: 2615.545 (21.07)
+2026-07-21 17:07:03,465 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $359.93
+2026-07-21 17:07:03,465 - backtest_engine - INFO - 📉 Trade #168 closed: ❌ LOSS P&L: $-179.96 (-0.40%)
+2026-07-21 17:07:03,465 - backtest_engine - INFO - 📈 Trade #169 opened: SHORT 27.48 units @ 2643.9
+2026-07-21 17:07:03,466 - backtest_engine - INFO -    SL: 2650.3167857142857 (6.42), TP: 2631.066428571429 (12.83)     
+2026-07-21 17:07:03,466 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $352.73
+2026-07-21 17:07:03,466 - backtest_engine - INFO - 📉 Trade #169 closed: ✅ WIN P&L: $352.73 (0.49%)
+2026-07-21 17:07:03,466 - backtest_engine - INFO - 📈 Trade #170 opened: LONG 19.27 units @ 2625.03
+2026-07-21 17:07:03,466 - backtest_engine - INFO -    SL: 2615.510357142857 (9.52), TP: 2644.0692857142863 (19.04)     
+2026-07-21 17:07:03,466 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $366.84
+2026-07-21 17:07:03,467 - backtest_engine - INFO - 📉 Trade #170 closed: ❌ LOSS P&L: $-183.42 (-0.36%)
+2026-07-21 17:07:03,467 - backtest_engine - INFO - 📈 Trade #171 opened: SHORT 20.74 units @ 2615.81
+2026-07-21 17:07:03,467 - backtest_engine - INFO -    SL: 2624.477857142857 (8.67), TP: 2598.4742857142855 (17.34)     
+2026-07-21 17:07:03,467 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $359.50
+2026-07-21 17:07:03,467 - backtest_engine - INFO - 📉 Trade #171 closed: ❌ LOSS P&L: $-179.75 (-0.33%)
+2026-07-21 17:07:03,468 - backtest_engine - INFO - 📈 Trade #172 opened: SHORT 22.02 units @ 2616.28
+2026-07-21 17:07:03,468 - backtest_engine - INFO -    SL: 2624.2782142857145 (8.00), TP: 2600.2835714285716 (16.00)    
+2026-07-21 17:07:03,468 - backtest_engine - INFO -    R:R ratio: 1:2.00, Capital at risk: $352.31
+2026-07-21 17:07:03,468 - backtest_engine - INFO - 📉 Trade #172 closed: ✅ WIN P&L: $352.31 (0.61%)
+2026-07-21 17:07:03,469 - __main__ - INFO -
 📈 STEP 4: Calculating metrics...
-2026-07-21 13:29:17,830 - __main__ - INFO -
+2026-07-21 17:07:03,470 - __main__ - INFO -
 ============================================================
-2026-07-21 13:29:17,830 - __main__ - INFO - 📊 BACKTEST RESULTS
-2026-07-21 13:29:17,830 - __main__ - INFO - ============================================================
-2026-07-21 13:29:17,830 - __main__ - INFO - Total Trades:        51
-2026-07-21 13:29:17,830 - __main__ - INFO - Winning Trades:      19
-2026-07-21 13:29:17,830 - __main__ - INFO - Losing Trades:       32
-2026-07-21 13:29:17,830 - __main__ - INFO - Win Rate:            37.25%
-2026-07-21 13:29:17,831 - __main__ - INFO - Profit Factor:       1.78
-2026-07-21 13:29:17,831 - __main__ - INFO - Total P&L:           $6109.71
-2026-07-21 13:29:17,831 - __main__ - INFO - Max Drawdown:        9.61%
-2026-07-21 13:29:17,831 - __main__ - INFO - ROI:                 61.10%
-2026-07-21 13:29:17,831 - __main__ - INFO - Final Capital:       $16109.71
-2026-07-21 13:29:17,831 - __main__ - INFO - ============================================================
-2026-07-21 13:29:17,831 - __main__ - INFO -
-📊 Signal Statistics:
-2026-07-21 13:29:17,831 - __main__ - INFO -    Bullish signals:   583
-2026-07-21 13:29:17,831 - __main__ - INFO -    Bearish signals:   271
-2026-07-21 13:29:17,831 - __main__ - INFO -    No signal:         5058
-2026-07-21 13:29:17,831 - __main__ - INFO -    Trades placed:     51
-2026-07-21 13:29:17,831 - __main__ - INFO -
-💾 Saving detailed report...
-2026-07-21 13:29:17,833 - backtest_engine - INFO - 💾 Report saved: backtest_report.json
-2026-07-21 13:29:17,833 - __main__ - INFO - ✅ Trade history saved to: trades_history.txt
-2026-07-21 13:29:17,833 - __main__ - INFO -
-✅ BACKTEST COMPLETE!
-2026-07-21 13:29:17,833 - __main__ - INFO - ============================================================
+2026-07-21 17:07:03,470 - __main__ - INFO - 📊 PHASE 2 BACKTEST RESULTS
+2026-07-21 17:07:03,470 - __main__ - INFO - ============================================================
+2026-07-21 17:07:03,470 - __main__ - INFO - Total Trades:        172
+2026-07-21 17:07:03,470 - __main__ - INFO - Winning Trades:      57
+2026-07-21 17:07:03,470 - __main__ - INFO - Losing Trades:       115
+2026-07-21 17:07:03,470 - __main__ - INFO - Win Rate:            33.14%
+2026-07-21 17:07:03,470 - __main__ - INFO - Profit Factor:       0.95
+2026-07-21 17:07:03,471 - __main__ - INFO - Total P&L:           $-839.92
+2026-07-21 17:07:03,471 - __main__ - INFO - Max Drawdown:        41.00%
+2026-07-21 17:07:03,471 - __main__ - INFO - ROI:                 -8.40%
+2026-07-21 17:07:03,471 - __main__ - INFO - Final Capital:       $9160.08
+2026-07-21 17:07:03,471 - __main__ - INFO - ============================================================
+2026-07-21 17:07:03,471 - __main__ - INFO -
+2026-07-21 17:07:03,471 - __main__ - INFO - 📊 Signal Statistics:
+2026-07-21 17:07:03,471 - __main__ - INFO -    Bullish signals:   583
+2026-07-21 17:07:03,471 - __main__ - INFO -    Bearish signals:   270
+2026-07-21 17:07:03,471 - __main__ - INFO -    No signal:         5049
+2026-07-21 17:07:03,471 - __main__ - INFO -    Trades placed:     172
+2026-07-21 17:07:03,471 - __main__ - INFO -    Trades filtered:   413
+2026-07-21 17:07:03,471 - __main__ - INFO -    Filter rate:       70.6%
+2026-07-21 17:07:03,471 - __main__ - INFO -
+2026-07-21 17:07:03,471 - __main__ - INFO - 💾 Saving detailed report...
+2026-07-21 17:07:03,472 - __main__ - INFO -    💾 Report saved: backtest_phase2_report.json
+2026-07-21 17:07:03,472 - __main__ - INFO -
+2026-07-21 17:07:03,473 - __main__ - INFO - ✅ Trade history saved to: phase2_trades_history.txt
+2026-07-21 17:07:03,474 - __main__ - INFO -
+2026-07-21 17:07:03,474 - __main__ - INFO - ✅ PHASE 2 BACKTEST COMPLETE!
+2026-07-21 17:07:03,474 - __main__ - INFO - ============================================================
