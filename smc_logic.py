@@ -130,6 +130,9 @@ class SMCAnalyzer:
         elif fvg:
             signal = SMCSignal.BULLISH if fvg[2] == "BULLISH" else SMCSignal.BEARISH
             entry_level = (fvg[0] + fvg[1]) / 2
+        elif choch:
+            # CHoCH alone: low confidence (0.3) signal for live paper trading observation
+            signal = SMCSignal.BULLISH if choch[1] == "BULLISH" else SMCSignal.BEARISH
         
         return {
             "liquidity_sweep": liquidity,
