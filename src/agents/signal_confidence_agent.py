@@ -53,13 +53,13 @@ Session                  : {session}
 3. Is market structure supporting the direction?
 4. Is the risk/reward favorable?
 
-Respond ONLY with this JSON:
+Respond ONLY with this JSON (no text outside, keep strings under 10 words):
 {{
   "is_valid_signal": true or false,
   "confidence_score": 0.0 to 1.0,
   "signal_strength": "WEAK" or "MEDIUM" or "STRONG",
-  "reasoning": "one sentence explanation",
-  "key_concern": "main risk if any, or null"
+  "reasoning": "max 8 words",
+  "key_concern": null or "max 6 words"
 }}
 """
 

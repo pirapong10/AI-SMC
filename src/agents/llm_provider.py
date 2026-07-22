@@ -27,10 +27,9 @@ class LLMProvider(ABC):
     def generate_json(self, prompt: str, temperature: float = 0.2) -> dict:
         """
         Send a prompt and parse the JSON response.
-        Falls back to empty dict on parse failure.
+        Falls back to partial extraction on truncated responses.
         """
         raw = self.generate(prompt, temperature=temperature)
-        # Strip markdown code fences if present
         raw = raw.strip()
         if raw.startswith("```"):
             raw = raw.split("```")[1]
@@ -38,13 +37,13 @@ class LLMProvider(ABC):
                 raw = raw[4:]
         raw = raw.strip().rstrip("`").strip()
 
-        # Try direct parse first
+        # 1. Direct parse (best case)
         try:
             return json.loads(raw)
         except json.JSONDecodeError:
             pass
 
-        # Try to extract just the JSON object (handles trailing garbage)
+        # 2. Extract full JSON object via regex
         import re
         match = re.search(r'\{.*\}', raw, re.DOTALL)
         if match:
@@ -53,7 +52,29 @@ class LLMProvider(ABC):
             except json.JSONDecodeError:
                 pass
 
-        logger.warning(f"⚠️ JSON parse failed. Raw response: {raw[:300]}")
+        # 3. Partial field extraction (handles truncated responses)
+        result = {}
+        for m in re.finditer(r'"(\w+)"\s*:\s*(true|false|null|"[^"]*"|[\d.]+)', raw):
+            key, val = m.group(1), m.group(2)
+            if val == "true":
+                result[key] = True
+            elif val == "false":
+                result[key] = False
+            elif val == "null":
+                result[key] = None
+            elif val.startswith('"'):
+                result[key] = val.strip('"')
+            else:
+                try:
+                    result[key] = float(val) if '.' in val else int(val)
+                except ValueError:
+                    result[key] = val
+
+        if result:
+            logger.info(f"📋 Partial JSON extracted: {list(result.keys())}")
+            return result
+
+        logger.warning(f"⚠️ JSON parse failed. Raw: {raw[:200]}")
         return {}
 
     @property
